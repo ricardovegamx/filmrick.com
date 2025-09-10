@@ -21,34 +21,40 @@ The city is not a concrete jungle, it is a human zoo.
 
 <Gallery>
   <GalleryImage 
-    src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?w=400&h=400&fit=crop" 
+    src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f" 
     alt="Modern building architecture"
-    caption="Glass and Steel" 
+    caption="Glass and Steel"
+    index={0}
   />
   <GalleryImage 
-    src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=400&fit=crop" 
+    src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000" 
     alt="Urban street perspective"
-    caption="City Lines" 
+    caption="City Lines"
+    index={1}
   />
   <GalleryImage 
-    src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&h=400&fit=crop" 
+    src="https://images.unsplash.com/photo-1486325212027-8081e485255e" 
     alt="Architectural details"
-    caption="Geometric Forms" 
+    caption="Geometric Forms"
+    index={2}
   />
   <GalleryImage 
-    src="https://images.unsplash.com/photo-1445457971072-7104707c3726?w=400&h=400&fit=crop" 
+    src="https://images.unsplash.com/photo-1445457971072-7104707c3726" 
     alt="Building shadows"
-    caption="Light and Shadow" 
+    caption="Light and Shadow"
+    index={3}
   />
   <GalleryImage 
-    src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&h=400&fit=crop" 
+    src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df" 
     alt="Urban symmetry"
-    caption="Perfect Balance" 
+    caption="Perfect Balance"
+    index={4}
   />
   <GalleryImage 
-    src="https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?w=400&h=400&fit=crop" 
+    src="https://images.unsplash.com/photo-1485182708500-e8f1f318ba72" 
     alt="City reflections"
-    caption="Mirror City" 
+    caption="Mirror City"
+    index={5}
   />
 </Gallery>
 
