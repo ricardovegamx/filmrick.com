@@ -3,15 +3,23 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="container py-[var(--space-5xl)] md:py-[calc(var(--space-5xl)*2)]">
+      {/* Hero Section - Maximum breathing room */}
+      <section 
+        className="
+          container 
+          pt-[var(--section-spacing-xl)] 
+          pb-[var(--section-spacing-lg)]
+          md:pt-[calc(var(--section-spacing-xl)+var(--nav-height))] 
+          md:pb-[var(--section-spacing-xl)]
+        "
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h1 
             className="
               text-display md:text-[5rem] lg:text-[6rem] 
               font-light tracking-tight
               text-[var(--color-text-primary)]
-              mb-[var(--space-2xl)]
+              mb-[var(--space-comfortable)] md:mb-[var(--space-generous)]
               animate-fade-in
             "
             style={{ 
@@ -27,7 +35,7 @@ export default function Home() {
               text-body md:text-lg 
               text-[var(--color-text-secondary)] 
               reading-width mx-auto
-              mb-[var(--space-4xl)]
+              mb-[var(--space-generous)] md:mb-[var(--space-luxurious)]
               animate-fade-in
             "
             style={{ 
@@ -42,7 +50,8 @@ export default function Home() {
 
           <div 
             className="
-              flex flex-col sm:flex-row gap-[var(--space-lg)] 
+              flex flex-col sm:flex-row 
+              gap-[var(--space-lg)] sm:gap-[var(--space-comfortable)]
               justify-center items-center
               animate-fade-in
             "
@@ -67,14 +76,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Work Preview */}
-      <section className="container py-[var(--space-4xl)]">
-        <div className="text-center mb-[var(--space-3xl)]">
+      {/* Featured Work Preview - Generous section spacing */}
+      <section 
+        className="
+          container 
+          py-[var(--section-spacing-lg)]
+          border-t border-[var(--color-border-subtle)]
+        "
+      >
+        <div className="text-center mb-[var(--space-generous)]">
           <h2 
             className="
               text-headline font-light 
               text-[var(--color-text-primary)]
-              mb-[var(--space-lg)]
+              mb-[var(--space-comfortable)]
               animate-fade-in
             "
             style={{ 
@@ -103,7 +118,7 @@ export default function Home() {
         <div 
           className="
             grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
-            gap-[var(--grid-column-gap)]
+            gap-[var(--gallery-gap-lg)] md:gap-[var(--space-generous)]
             animate-fade-in
           "
           style={{ 
@@ -144,7 +159,7 @@ export default function Home() {
 
         <div 
           className="
-            text-center mt-[var(--space-3xl)]
+            text-center mt-[var(--space-generous)] md:mt-[var(--space-luxurious)]
             animate-fade-in
           "
           style={{ 
@@ -168,16 +183,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Philosophy Section */}
+      {/* Philosophy Section - Maximum Ma breathing room */}
       <section 
         className="
-          container py-[var(--space-5xl)]
+          container 
+          py-[var(--section-spacing-lg)] md:py-[var(--section-spacing-xl)]
           border-t border-[var(--color-border-subtle)]
         "
       >
         <div 
           className="
             max-w-3xl mx-auto text-center
+            px-[var(--space-lg)] md:px-0
             animate-fade-in
           "
           style={{ 
@@ -190,7 +207,7 @@ export default function Home() {
               text-serif-italic text-title md:text-headline 
               leading-relaxed
               text-[var(--color-text-primary)]
-              mb-[var(--space-xl)]
+              mb-[var(--space-comfortable)] md:mb-[var(--space-generous)]
             "
           >
             &ldquo;Photography is not just about freezing time; 

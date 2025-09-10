@@ -32,14 +32,14 @@ export function Gallery({
       case 'masonry':
         return 'grid-masonry'
       case 'featured':
-        return 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--grid-column-gap)] auto-rows-fr'
+        return 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--gallery-gap-lg)] md:gap-[var(--space-generous)] auto-rows-fr'
       default:
         const colClass = {
           2: 'grid-cols-1 md:grid-cols-2',
           3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
           4: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
         }[columns]
-        return `grid ${colClass} gap-[var(--grid-column-gap)]`
+        return `grid ${colClass} gap-[var(--gallery-gap-sm)] md:gap-[var(--gallery-gap-md)] lg:gap-[var(--gallery-gap-lg)]`
     }
   }
 
@@ -47,7 +47,7 @@ export function Gallery({
     <section 
       className={`
         ${getGridClasses()}
-        py-[var(--space-3xl)]
+        py-[var(--section-spacing-md)] md:py-[var(--section-spacing-lg)]
         animate-fade-in
       `}
       style={{ 
@@ -91,6 +91,7 @@ export function GalleryImage({
       className="
         group relative cursor-pointer
         animate-fade-in
+        mb-[var(--space-lg)] last:mb-0
       "
       style={{ 
         animationDelay: `${index * 100 + 300}ms`,
@@ -107,7 +108,8 @@ export function GalleryImage({
           transition-all duration-500 ease-[var(--ease-in-out-circ)]
           group-hover:border-[var(--color-border-default)]
           group-hover:shadow-[var(--shadow-moderate)]
-          group-hover:transform group-hover:-translate-y-1
+          group-hover:transform group-hover:-translate-y-2
+          mb-[var(--space-md)]
         `}
       >
         <Image
@@ -152,7 +154,8 @@ export function GalleryImage({
       {caption && (
         <figcaption 
           className={`
-            mt-[var(--space-md)] text-caption text-center
+            mt-[var(--space-comfortable)] text-caption text-center
+            px-[var(--space-sm)] reading-width mx-auto
             transition-all duration-300
             ${isHovered ? 'opacity-100 transform translate-y-0' : 'opacity-70 transform translate-y-1'}
           `}
@@ -181,7 +184,7 @@ export function FeaturedGalleryImage({
   const [isLoaded, setIsLoaded] = useState(false)
   
   return (
-    <figure className={`group relative ${className}`}>
+    <figure className={`group relative ${className} mb-[var(--space-generous)]`}>
       <div 
         className="
           relative aspect-[16/10] overflow-hidden
@@ -190,6 +193,8 @@ export function FeaturedGalleryImage({
           transition-all duration-700 ease-[var(--ease-in-out-circ)]
           group-hover:border-[var(--color-border-default)]
           group-hover:shadow-[var(--shadow-deep)]
+          group-hover:transform group-hover:-translate-y-2
+          mb-[var(--space-lg)]
         "
       >
         <Image
@@ -220,7 +225,16 @@ export function FeaturedGalleryImage({
       </div>
       
       {caption && (
-        <figcaption className="mt-[var(--space-lg)] text-body text-center reading-width mx-auto">
+        <figcaption 
+          className="
+            mt-[var(--space-comfortable)] 
+            text-body text-center reading-width mx-auto
+            px-[var(--space-lg)]
+            text-[var(--color-text-secondary)]
+            transition-colors duration-300
+            group-hover:text-[var(--color-text-primary)]
+          "
+        >
           {caption}
         </figcaption>
       )}

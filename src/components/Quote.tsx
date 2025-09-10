@@ -19,31 +19,31 @@ export function Quote({
     switch (variant) {
       case 'large':
         return {
-          container: 'py-[var(--space-4xl)]',
+          container: 'py-[var(--section-spacing-md)] md:py-[var(--section-spacing-lg)]',
           quote: 'text-serif-italic text-title md:text-headline leading-relaxed',
           mark: 'text-[4rem] md:text-[6rem] opacity-20',
-          spacing: 'pl-[var(--space-3xl)]'
+          spacing: 'pl-[var(--space-generous)] pr-[var(--space-lg)]'
         }
       case 'featured':
         return {
-          container: 'py-[var(--space-5xl)] border-y border-[var(--color-border-subtle)]',
+          container: 'py-[var(--section-spacing-lg)] md:py-[var(--section-spacing-xl)] border-y border-[var(--color-border-subtle)]',
           quote: 'text-serif-italic text-headline md:text-display leading-relaxed text-center',
           mark: 'text-[6rem] md:text-[8rem] opacity-15',
-          spacing: 'px-[var(--space-2xl)]'
+          spacing: 'px-[var(--space-comfortable)] md:px-[var(--space-generous)]'
         }
       case 'minimal':
         return {
-          container: 'py-[var(--space-2xl)]',
+          container: 'py-[var(--space-generous)]',
           quote: 'text-serif-italic text-body leading-relaxed',
           mark: 'text-[2rem] opacity-25',
-          spacing: 'pl-[var(--space-lg)]'
+          spacing: 'pl-[var(--space-comfortable)] pr-[var(--space-md)]'
         }
       default:
         return {
-          container: 'py-[var(--space-3xl)]',
+          container: 'py-[var(--section-spacing-sm)] md:py-[var(--section-spacing-md)]',
           quote: 'text-serif-italic text-lg md:text-xl leading-relaxed',
           mark: 'text-[3rem] md:text-[4rem] opacity-20',
-          spacing: 'pl-[var(--space-2xl)]'
+          spacing: 'pl-[var(--space-generous)] pr-[var(--space-comfortable)]'
         }
     }
   }
@@ -69,6 +69,7 @@ export function Quote({
         relative ${classes.container} 
         ${getAlignmentClasses()}
         animate-fade-in
+        margin-x-auto max-w-none
       `}
       style={{ 
         animationDelay: '300ms',
@@ -83,8 +84,8 @@ export function Quote({
             font-serif absolute select-none
             text-[var(--color-text-tertiary)]
             ${isCenter 
-              ? 'top-[-1rem] left-1/2 transform -translate-x-1/2' 
-              : 'top-[-0.5rem] left-[-0.5rem]'
+              ? 'top-[-1.5rem] md:top-[-2rem] left-1/2 transform -translate-x-1/2' 
+              : 'top-[-0.75rem] md:top-[-1rem] left-[-0.75rem] md:left-[-1rem]'
             }
           `}
           aria-hidden="true"
@@ -98,7 +99,8 @@ export function Quote({
             relative z-10 
             ${classes.quote}
             text-[var(--color-text-primary)]
-            ${isCenter ? classes.spacing : classes.spacing}
+            ${classes.spacing}
+            transition-colors duration-300
           `}
         >
           {children}
@@ -111,7 +113,7 @@ export function Quote({
               ${classes.mark} 
               font-serif absolute select-none
               text-[var(--color-text-tertiary)]
-              bottom-[-2rem] right-0 transform rotate-180
+              bottom-[-2.5rem] md:bottom-[-3rem] right-0 transform rotate-180
             `}
             aria-hidden="true"
           >
@@ -124,9 +126,12 @@ export function Quote({
       {(author || source) && (
         <figcaption 
           className={`
-            mt-[var(--space-xl)] text-caption 
+            mt-[var(--space-comfortable)] md:mt-[var(--space-generous)] 
+            text-caption 
             ${alignment === 'center' ? 'text-center' : 'text-right'}
-            transition-opacity duration-300 hover:opacity-100 opacity-70
+            transition-all duration-300 hover:opacity-100 opacity-70
+            hover:transform hover:translate-y-[-2px]
+            px-[var(--space-lg)]
           `}
         >
           {author && (

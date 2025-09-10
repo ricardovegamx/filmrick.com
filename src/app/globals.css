@@ -5,23 +5,46 @@
 
 /* CSS Custom Properties for Design Tokens */
 :root {
-  /* Spacing System - Japanese Ma (間) inspired intervals */
-  --space-xs: 4px;      /* 0.25rem */
-  --space-sm: 8px;      /* 0.5rem */
-  --space-md: 16px;     /* 1rem */
-  --space-lg: 24px;     /* 1.5rem */
-  --space-xl: 32px;     /* 2rem */
-  --space-2xl: 48px;    /* 3rem */
-  --space-3xl: 64px;    /* 4rem */
-  --space-4xl: 96px;    /* 6rem */
-  --space-5xl: 128px;   /* 8rem */
+  /* Spacing System - Japanese Ma (間) principles with generous negative space */
+  --space-xs: 6px;      /* 0.375rem - Minimum touch spacing */
+  --space-sm: 12px;     /* 0.75rem - Small element breathing room */
+  --space-md: 20px;     /* 1.25rem - Standard element spacing */
+  --space-lg: 32px;     /* 2rem - Section element spacing */
+  --space-xl: 48px;     /* 3rem - Major element separation */
+  --space-2xl: 64px;    /* 4rem - Section breathing room */
+  --space-3xl: 96px;    /* 6rem - Large section spacing */
+  --space-4xl: 128px;   /* 8rem - Hero section spacing */
+  --space-5xl: 192px;   /* 12rem - Maximum breathing room */
+  --space-6xl: 256px;   /* 16rem - Epic spacing for hero sections */
   
-  /* Grid System - Golden Ratio inspired */
+  /* Ma-inspired micro spacing for fine control */
+  --space-micro: 3px;   /* 0.1875rem - Micro adjustments */
+  --space-tiny: 9px;    /* 0.5625rem - Tiny gaps */
+  --space-compact: 16px; /* 1rem - Compact but breathable */
+  --space-comfortable: 40px; /* 2.5rem - Comfortable spacing */
+  --space-generous: 80px;    /* 5rem - Generous separation */
+  --space-luxurious: 160px;  /* 10rem - Luxurious breathing room */
+  
+  /* Grid System - Premium spacing with golden ratio proportions */
   --grid-unit: 8px;
-  --grid-column-gap: var(--space-lg);
-  --grid-row-gap: var(--space-xl);
+  --grid-column-gap: var(--space-comfortable);  /* 40px generous gaps */
+  --grid-row-gap: var(--space-generous);        /* 80px vertical rhythm */
+  --gallery-gap-sm: var(--space-lg);            /* 32px for mobile */
+  --gallery-gap-md: var(--space-comfortable);   /* 40px for tablet */
+  --gallery-gap-lg: var(--space-xl);            /* 48px for desktop */
   --content-max-width: 1200px;
   --reading-width: 65ch;
+  
+  /* Navigation spacing */
+  --nav-item-gap: var(--space-comfortable);     /* 40px between nav items */
+  --nav-height: 88px;                           /* Taller nav for breathing room */
+  --nav-padding-x: var(--space-lg);             /* 32px horizontal padding */
+  
+  /* Section spacing hierarchy */
+  --section-spacing-sm: var(--space-3xl);       /* 96px small sections */
+  --section-spacing-md: var(--space-4xl);       /* 128px medium sections */
+  --section-spacing-lg: var(--space-5xl);       /* 192px large sections */
+  --section-spacing-xl: var(--space-6xl);       /* 256px hero sections */
   
   /* Typography Scale */
   --text-xs: 0.75rem;     /* 12px */
@@ -238,36 +261,59 @@ body {
   max-width: var(--content-max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--space-lg);
-  padding-right: var(--space-lg);
+  padding-left: var(--nav-padding-x);   /* 32px generous side padding */
+  padding-right: var(--nav-padding-x);
 }
 
 .reading-width {
   max-width: var(--reading-width);
 }
 
-/* Grid System */
+/* Grid System - Premium spacing with breathing room */
 .grid-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--grid-column-gap) var(--grid-row-gap);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--gallery-gap-lg) var(--grid-row-gap);  /* 48px horizontal, 80px vertical */
 }
 
 .grid-masonry {
   columns: 3;
-  column-gap: var(--grid-column-gap);
+  column-gap: var(--gallery-gap-lg);  /* 48px generous gaps */
   break-inside: avoid;
+}
+
+/* Enhanced gallery spacing for different breakpoints */
+.gallery-spacing-sm {
+  gap: var(--gallery-gap-sm);
+}
+
+.gallery-spacing-md {
+  gap: var(--gallery-gap-md);
+}
+
+.gallery-spacing-lg {
+  gap: var(--gallery-gap-lg);
 }
 
 @media (max-width: 768px) {
   .grid-masonry {
     columns: 2;
+    column-gap: var(--gallery-gap-md);  /* 40px for tablet */
+  }
+  
+  .grid-gallery {
+    gap: var(--gallery-gap-md) var(--space-generous);  /* 40px horizontal, 80px vertical */
   }
 }
 
 @media (max-width: 480px) {
   .grid-masonry {
     columns: 1;
+    column-gap: var(--gallery-gap-sm);  /* 32px for mobile */
+  }
+  
+  .grid-gallery {
+    gap: var(--gallery-gap-sm) var(--space-2xl);  /* 32px horizontal, 64px vertical */
   }
 }
 
@@ -420,27 +466,48 @@ img {
   animation: scaleIn var(--duration-normal) var(--ease-out-sine) forwards;
 }
 
-/* Responsive Typography */
+/* Responsive Typography and Spacing */
 @media (max-width: 768px) {
   :root {
     --text-6xl: 2.5rem;    /* 40px */
     --text-5xl: 2rem;      /* 32px */
     --text-4xl: 1.875rem;  /* 30px */
     --text-3xl: 1.5rem;    /* 24px */
+    
+    /* Reduce spacing on tablet but maintain generous feel */
+    --section-spacing-sm: var(--space-2xl);    /* 64px */
+    --section-spacing-md: var(--space-3xl);    /* 96px */
+    --section-spacing-lg: var(--space-4xl);    /* 128px */
+    --section-spacing-xl: var(--space-5xl);    /* 192px */
+    --nav-item-gap: var(--space-lg);           /* 32px */
   }
   
   .container {
-    padding-left: var(--space-md);
-    padding-right: var(--space-md);
+    padding-left: var(--space-lg);   /* 32px on tablet */
+    padding-right: var(--space-lg);
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --space-2xl: 32px;    /* 2rem */
-    --space-3xl: 48px;    /* 3rem */
-    --space-4xl: 64px;    /* 4rem */
-    --space-5xl: 96px;    /* 6rem */
+    /* Reduce but maintain breathable spacing on mobile */
+    --space-2xl: 48px;     /* 3rem */
+    --space-3xl: 64px;     /* 4rem */
+    --space-4xl: 96px;     /* 6rem */
+    --space-5xl: 128px;    /* 8rem */
+    --space-6xl: 160px;    /* 10rem */
+    
+    --section-spacing-sm: var(--space-xl);     /* 48px */
+    --section-spacing-md: var(--space-2xl);    /* 48px */
+    --section-spacing-lg: var(--space-3xl);    /* 64px */
+    --section-spacing-xl: var(--space-4xl);    /* 96px */
+    --nav-item-gap: var(--space-md);           /* 20px */
+    --nav-height: 72px;                        /* Shorter nav on mobile */
+  }
+  
+  .container {
+    padding-left: var(--space-md);   /* 20px on mobile */
+    padding-right: var(--space-md);
   }
 }
 
