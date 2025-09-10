@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { getPostBySlug, getPostSlugs } from '@/lib/mdx'
 import { MDXContent } from '@/components/MDXContent'
+import { generateMetadata as generateSEOMetadata, generateArticleStructuredData } from '@/lib/seo'
 
 interface StoryPageProps {
   params: Promise<{
@@ -13,6 +14,22 @@ export function generateStaticParams() {
   return slugs.map((slug) => ({ slug }))
 }
 
+export async function generateMetadata({ params }: StoryPageProps) {
+  const { slug } = await params
+  const post = getPostBySlug('stories', slug)
+  
+  if (!post) return {}
+  
+  return generateSEOMetadata({
+    title: post.metadata.title,
+    description: post.metadata.description,
+    keywords: post.metadata.tags,
+    url: `https://filmrick.com/stories/${slug}`,
+    type: 'article',
+    publishedTime: post.metadata.date,
+  })
+}
+
 export default async function StoryPage({ params }: StoryPageProps) {
   const { slug } = await params
   const post = getPostBySlug('stories', slug)
@@ -21,8 +38,21 @@ export default async function StoryPage({ params }: StoryPageProps) {
     notFound()
   }
 
+  const structuredData = generateArticleStructuredData({
+    title: post.metadata.title,
+    description: post.metadata.description,
+    url: `https://filmrick.com/stories/${slug}`,
+    publishedTime: post.metadata.date,
+  })
+
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
       <div className="container mx-auto px-4 py-8">
         <MDXContent post={post} />
       </div>
