@@ -1,8 +1,16 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Post } from '@/lib/mdx'
+import { Gallery, GalleryImage } from '@/components/Gallery'
+import { Quote } from '@/components/Quote'
 
 interface MDXContentProps {
   post: Post
+}
+
+const components = {
+  Gallery,
+  GalleryImage,
+  Quote,
 }
 
 export function MDXContent({ post }: MDXContentProps) {
@@ -40,7 +48,7 @@ export function MDXContent({ post }: MDXContentProps) {
         )}
       </header>
       <div className="prose prose-lg max-w-none">
-        <MDXRemote source={post.content} />
+        <MDXRemote source={post.content} components={components} />
       </div>
     </article>
   )

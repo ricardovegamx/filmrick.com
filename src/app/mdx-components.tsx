@@ -1,4 +1,6 @@
 import type { MDXComponents } from 'mdx/types'
+import { Gallery, GalleryImage } from '@/components/Gallery'
+import { Quote } from '@/components/Quote'
  
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -26,6 +28,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </blockquote>
     ),
+    // Custom components
+    Gallery,
+    GalleryImage,
+    Quote,
     ...components,
   }
 }
