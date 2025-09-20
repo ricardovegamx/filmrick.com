@@ -11,7 +11,18 @@
       "Bash(git checkout:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(open http://localhost:3000)",
+      "Bash(open http://localhost:3001)",
+      "Bash(lsof:*)",
+      "Bash(kill:*)",
+      "Bash(open http://localhost:3000/stories)",
+      "Bash(open http://localhost:3000/stories/season-two-begins)",
+      "Bash(open http://localhost:3000/galleries)",
+      "Bash(open http://localhost:3000/galleries/portraits)",
+      "WebSearch",
+      "WebFetch(domain:next-intl.dev)",
+      "Bash(npm uninstall:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,14 +1,30 @@
 'use client'
 
 import Image from 'next/image'
-import { ReactNode, useState } from 'react'
+import { ReactNode, useState, useEffect, Children, cloneElement, isValidElement, createContext, useContext } from 'react'
 import { responsiveImageSizes, shouldLoadWithPriority } from '@/lib/image-utils'
+import { ImageModal } from './ImageModal'
 
 interface GalleryProps {
   children: ReactNode
   priority?: boolean
   layout?: 'grid' | 'masonry' | 'featured'
   columns?: 2 | 3 | 4
+}
+
+interface GalleryContextType {
+  openModal: (index: number) => void
+  images: Array<{ src: string; alt: string; caption?: string }>
+}
+
+const GalleryContext = createContext<GalleryContextType | null>(null)
+
+const useGalleryContext = () => {
+  const context = useContext(GalleryContext)
+  if (!context) {
+    throw new Error('GalleryImage must be used within a Gallery')
+  }
+  return context
 }
 
 interface GalleryImageProps {
@@ -27,36 +43,102 @@ export function Gallery({
   layout = 'grid',
   columns = 3 
 }: GalleryProps) {
+  const [modalIndex, setModalIndex] = useState<number | null>(null)
+  const [images, setImages] = useState<Array<{ src: string; alt: string; caption?: string }>>([])
+
+  // Extract image data from children using useEffect
+  useEffect(() => {
+    const childrenArray = Children.toArray(children)
+    
+    const imageData = childrenArray
+      .filter(child => {
+        if (!isValidElement(child)) return false
+        // Check if it's a GalleryImage by checking props structure
+        return child.props && 'src' in child.props && 'alt' in child.props
+      })
+      .map(child => {
+        const props = child.props as GalleryImageProps
+        return {
+          src: props.src,
+          alt: props.alt,
+          caption: props.caption
+        }
+      })
+    
+    setImages(imageData)
+  }, [children])
+
+  const openModal = (index: number) => {
+    setModalIndex(index)
+  }
+
+  const closeModal = () => {
+    setModalIndex(null)
+  }
+
+  const nextImage = () => {
+    if (modalIndex !== null && modalIndex < images.length - 1) {
+      setModalIndex(modalIndex + 1)
+    }
+  }
+
+  const previousImage = () => {
+    if (modalIndex !== null && modalIndex > 0) {
+      setModalIndex(modalIndex - 1)
+    }
+  }
   const getGridClasses = () => {
     switch (layout) {
       case 'masonry':
         return 'grid-masonry'
       case 'featured':
-        return 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--gallery-gap-lg)] md:gap-[var(--space-generous)] auto-rows-fr'
+        return 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 auto-rows-fr'
       default:
         const colClass = {
           2: 'grid-cols-1 md:grid-cols-2',
           3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
           4: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
         }[columns]
-        return `grid ${colClass} gap-[var(--gallery-gap-sm)] md:gap-[var(--gallery-gap-md)] lg:gap-[var(--gallery-gap-lg)]`
+        return `grid ${colClass} gap-4 md:gap-6 lg:gap-8`
     }
   }
 
   return (
-    <section 
-      className={`
-        ${getGridClasses()}
-        py-[var(--section-spacing-md)] md:py-[var(--section-spacing-lg)]
-        animate-fade-in
-      `}
-      style={{ 
-        animationDelay: '200ms',
-        animationFillMode: 'both'
-      }}
-    >
-      {children}
-    </section>
+    <GalleryContext.Provider value={{ openModal, images }}>
+      <section 
+        className={`
+          ${getGridClasses()}
+          py-16 md:py-20
+          animate-fade-in
+        `}
+        style={{ 
+          animationDelay: '200ms',
+          animationFillMode: 'both'
+        }}
+      >
+        {Children.map(children, (child, index) => {
+          if (isValidElement(child) && child.type === GalleryImage) {
+            return cloneElement(child, { ...child.props, index })
+          }
+          return child
+        })}
+      </section>
+      
+      {/* Modal */}
+      {modalIndex !== null && images[modalIndex] && (
+        <ImageModal
+          src={images[modalIndex].src}
+          alt={images[modalIndex].alt}
+          caption={images[modalIndex].caption}
+          isOpen={modalIndex !== null}
+          onClose={closeModal}
+          onNext={nextImage}
+          onPrevious={previousImage}
+          currentIndex={modalIndex}
+          totalImages={images.length}
+        />
+      )}
+    </GalleryContext.Provider>
   )
 }
 
@@ -69,6 +151,7 @@ export function GalleryImage({
   sizes = responsiveImageSizes.gallery.combined,
   aspectRatio = 'auto'
 }: GalleryImageProps) {
+  const { openModal } = useGalleryContext()
   const shouldUsePriority = priority ?? shouldLoadWithPriority(index)
   const [isLoaded, setIsLoaded] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
@@ -99,17 +182,18 @@ export function GalleryImage({
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => openModal(index)}
     >
       <div 
         className={`
           relative ${getAspectRatioClass()} overflow-hidden 
-          bg-[var(--color-bg-tertiary)]
-          border border-[var(--color-border-subtle)]
-          transition-all duration-500 ease-[var(--ease-in-out-circ)]
-          group-hover:border-[var(--color-border-default)]
-          group-hover:shadow-[var(--shadow-moderate)]
+          bg-gray-50
+          border border-gray-200
+          transition-all duration-500 ease-in-out
+          group-hover:border-gray-300
+          group-hover:shadow-lg
           group-hover:transform group-hover:-translate-y-2
-          mb-[var(--space-md)]
+          mb-4
         `}
       >
         <Image
@@ -132,7 +216,7 @@ export function GalleryImage({
         <div 
           className={`
             absolute inset-0 
-            bg-gradient-to-t from-[var(--color-black)] via-transparent to-transparent
+            bg-gradient-to-t from-black via-transparent to-transparent
             opacity-0 transition-opacity duration-500
             ${isHovered ? 'opacity-20' : 'opacity-0'}
           `}
@@ -143,8 +227,8 @@ export function GalleryImage({
           <div className="absolute inset-0 flex items-center justify-center">
             <div 
               className="
-                w-8 h-8 border-2 border-[var(--color-border-default)] 
-                border-t-[var(--color-accent)] rounded-full animate-spin
+                w-8 h-8 border-2 border-gray-300 
+                border-t-blue-500 rounded-full animate-spin
               "
             />
           </div>
@@ -154,8 +238,8 @@ export function GalleryImage({
       {caption && (
         <figcaption 
           className={`
-            mt-[var(--space-comfortable)] text-caption text-center
-            px-[var(--space-sm)] reading-width mx-auto
+            mt-8 text-caption text-center
+            px-2 reading-width mx-auto
             transition-all duration-300
             ${isHovered ? 'opacity-100 transform translate-y-0' : 'opacity-70 transform translate-y-1'}
           `}
@@ -184,17 +268,17 @@ export function FeaturedGalleryImage({
   const [isLoaded, setIsLoaded] = useState(false)
   
   return (
-    <figure className={`group relative ${className} mb-[var(--space-generous)]`}>
+    <figure className={`group relative ${className} mb-12`}>
       <div 
         className="
           relative aspect-[16/10] overflow-hidden
-          bg-[var(--color-bg-tertiary)]
-          border border-[var(--color-border-subtle)]
-          transition-all duration-700 ease-[var(--ease-in-out-circ)]
-          group-hover:border-[var(--color-border-default)]
-          group-hover:shadow-[var(--shadow-deep)]
+          bg-gray-50
+          border border-gray-200
+          transition-all duration-700 ease-in-out
+          group-hover:border-gray-300
+          group-hover:shadow-xl
           group-hover:transform group-hover:-translate-y-2
-          mb-[var(--space-lg)]
+          mb-6
         "
       >
         <Image
@@ -216,8 +300,8 @@ export function FeaturedGalleryImage({
           <div className="absolute inset-0 flex items-center justify-center">
             <div 
               className="
-                w-12 h-12 border-2 border-[var(--color-border-default)] 
-                border-t-[var(--color-accent)] rounded-full animate-spin
+                w-12 h-12 border-2 border-gray-300 
+                border-t-blue-500 rounded-full animate-spin
               "
             />
           </div>
@@ -227,12 +311,12 @@ export function FeaturedGalleryImage({
       {caption && (
         <figcaption 
           className="
-            mt-[var(--space-comfortable)] 
+            mt-8 
             text-body text-center reading-width mx-auto
-            px-[var(--space-lg)]
-            text-[var(--color-text-secondary)]
+            px-6
+            text-gray-600
             transition-colors duration-300
-            group-hover:text-[var(--color-text-primary)]
+            group-hover:text-black
           "
         >
           {caption}

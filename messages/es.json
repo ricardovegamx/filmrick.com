@@ -1,0 +1,77 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "galleries": "Galerías",
+    "stories": "Historias", 
+    "myGear": "Mi Equipo",
+    "about": "Acerca de"
+  },
+  "home": {
+    "tagline": "Fotografía analógica desde Ciudad de México",
+    "title": "Aventuras en Fotografía Analógica",
+    "description": "Explorando la poesía entre momentos a través de la fotografía analógica. Galerías, reseñas de cámaras, historias de cuarto oscuro, y todo lo analógico — donde cada cuadro cuenta y la luz se encuentra con la emoción.",
+    "viewGalleries": "Ver Galerías",
+    "readStories": "Leer Historias",
+    "featuredWork": "Trabajo Destacado",
+    "featuredDescription": "Exploraciones recientes en luz, sombra y conexión humana.",
+    "viewAllGalleries": "Ver Todas las Galerías →",
+    "quote": "La fotografía no se trata solo de congelar el tiempo; se trata de entender la poesía que existe en el espacio entre momentos.",
+    "quoteAuthor": "— Sobre el arte de ver"
+  },
+  "galleries": {
+    "title": "Galerías",
+    "description": "Colecciones de momentos capturados en película, cada una contando una historia a través de luz, sombra y emoción.",
+    "noGalleries": "Aún no hay galerías disponibles.",
+    "checkBack": "Vuelve pronto para nuevas colecciones de fotografía analógica."
+  },
+  "stories": {
+    "title": "Historias", 
+    "description": "Relatos del mundo analógico: reseñas de cámaras, aventuras de cuarto oscuro, y reflexiones sobre el arte de la fotografía analógica.",
+    "noStories": "Aún no hay historias disponibles.",
+    "checkBack": "Vuelve pronto para relatos del mundo analógico."
+  },
+  "myGear": {
+    "title": "Mi Equipo",
+    "description": "Las cámaras, lentes y herramientas que me ayudan a capturar la poesía de los momentos cotidianos en película.",
+    "cameras": "Cámaras",
+    "lenses": "Lentes", 
+    "filmStocks": "Películas Favoritas",
+    "accessories": "Accesorios Esenciales",
+    "primaryCamera": "Cámara Principal",
+    "secondaryCamera": "Cámara Secundaria",
+    "primaryCameraDesc": "Detalles sobre tu cámara principal de película, por qué la elegiste, y qué la hace especial para tu fotografía.",
+    "secondaryCameraDesc": "Tu cámara de respaldo o especializada para diferentes situaciones y enfoques fotográficos.",
+    "kodakTriX": "Película clásica en blanco y negro con hermoso grano y amplio rango de exposición.",
+    "fujiPro400H": "Película negativa de color con tonos de piel suaves y renderizado de color natural.",
+    "ilfordHP5": "Película versátil en blanco y negro, excelente para fotografía callejera y retratos.",
+    "lightMeter": "Fotómetro externo para lecturas precisas de exposición",
+    "tripod": "Trípode de fibra de carbono para exposiciones largas y estabilidad",
+    "filters": "Filtros UV y polarizadores para protección y control creativo",
+    "cameraBag": "Bolsa resistente al clima para transportar equipo de forma segura",
+    "cleaningKit": "Mantener las ópticas limpias y libres de polvo"
+  },
+  "about": {
+    "title": "Acerca de FILMRICK",
+    "description": "Fotógrafo analógico con sede en Ciudad de México, explorando la poesía entre momentos a través de la fotografía analógica",
+    "letsConnect": "Conectemos",
+    "connectDescription": "Me encantaría conocer a otros fotógrafos, posibles colaboradores, o cualquiera interesado en el arte de la fotografía analógica.",
+    "readOnSubstack": "Leer en Substack",
+    "viewGalleries": "Ver Galerías",
+    "madeWith": "Hecho con película y paciencia digital en Ciudad de México"
+  },
+  "footer": {
+    "brand": "FILMRICK",
+    "brandDescription": "Fotografía analógica desde Ciudad de México. Explorando la poesía entre momentos a través de la fotografía analógica.",
+    "explore": "Explorar",
+    "connect": "Conectar",
+    "newsletter": "Newsletter de Substack",
+    "newsletterDescription": "Historias sobre fotografía analógica, técnicas de cuarto oscuro, y el arte de ver.",
+    "copyright": "Todos los derechos reservados."
+  },
+  "common": {
+    "featuredImage": "Imagen Destacada",
+    "portraitPhoto": "Foto de Retrato",
+    "cameraPhoto": "Foto de Cámara",
+    "gallery": "Galería"
+  }
+}

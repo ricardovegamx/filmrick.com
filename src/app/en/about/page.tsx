@@ -37,7 +37,7 @@ export default function About() {
       <section className="py-24 md:py-32 border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-12 md:px-16 text-center">
           <h1 className="text-5xl md:text-6xl font-extralight text-gray-800 mb-8 tracking-[-0.02em] font-sans">
-            {t('title')}
+            About FILMRICK
           </h1>
           <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
           

@@ -1,4 +1,5 @@
 import { SimpleNavigation } from './SimpleNavigation'
+import { Footer } from './Footer'
 
 interface ClientLayoutProps {
   children: React.ReactNode
@@ -8,9 +9,10 @@ export function ClientLayout({ children }: ClientLayoutProps) {
   return (
     <>
       <SimpleNavigation />
-      <main className="pt-[84px]">
+      <div className="pt-28">
         {children}
-      </main>
+      </div>
+      <Footer />
     </>
   )
 }

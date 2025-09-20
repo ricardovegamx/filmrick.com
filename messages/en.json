@@ -1,0 +1,77 @@
+{
+  "navigation": {
+    "home": "Home",
+    "galleries": "Galleries", 
+    "stories": "Stories",
+    "myGear": "My Gear",
+    "about": "About"
+  },
+  "home": {
+    "tagline": "Film Photography from Mexico City",
+    "title": "Adventures in Film Photography",
+    "description": "Exploring the poetry between moments through analog photography. Galleries, camera reviews, darkroom stories, and everything analog — where every frame counts and light meets emotion.",
+    "viewGalleries": "View Galleries",
+    "readStories": "Read Stories",
+    "featuredWork": "Featured Work",
+    "featuredDescription": "Recent explorations in light, shadow, and human connection.",
+    "viewAllGalleries": "View All Galleries →",
+    "quote": "Photography is not just about freezing time; it's about understanding the poetry that exists in the space between moments.",
+    "quoteAuthor": "— On the art of seeing"
+  },
+  "galleries": {
+    "title": "Galleries",
+    "description": "Collections of moments captured on film, each telling a story through light, shadow, and emotion.",
+    "noGalleries": "No galleries available yet.",
+    "checkBack": "Check back soon for new collections of film photography."
+  },
+  "stories": {
+    "title": "Stories",
+    "description": "Tales from the analog world: camera reviews, darkroom adventures, and reflections on the art of film photography.",
+    "noStories": "No stories available yet.",
+    "checkBack": "Check back soon for tales from the analog world."
+  },
+  "myGear": {
+    "title": "My Gear",
+    "description": "The cameras, lenses, and tools that help me capture the poetry of everyday moments on film.",
+    "cameras": "Cameras",
+    "lenses": "Lenses",
+    "filmStocks": "Favorite Film Stocks", 
+    "accessories": "Essential Accessories",
+    "primaryCamera": "Primary Camera",
+    "secondaryCamera": "Secondary Camera",
+    "primaryCameraDesc": "Details about your main film camera, why you chose it, and what makes it special for your photography.",
+    "secondaryCameraDesc": "Your backup or specialized camera for different situations and photographic approaches.",
+    "kodakTriX": "Classic black and white film with beautiful grain and wide exposure latitude.",
+    "fujiPro400H": "Color negative film with smooth skin tones and natural color rendition.",
+    "ilfordHP5": "Versatile black and white film, great for street photography and portraits.",
+    "lightMeter": "External light meter for precise exposure readings",
+    "tripod": "Carbon fiber tripod for long exposures and stability",
+    "filters": "UV and polarizing filters for protection and creative control",
+    "cameraBag": "Weather-resistant bag for carrying gear safely",
+    "cleaningKit": "Keeping optics clean and dust-free"
+  },
+  "about": {
+    "title": "About FILMRICK",
+    "description": "Film photographer based in Mexico City, exploring the poetry between moments through analog photography",
+    "letsConnect": "Let's Connect",
+    "connectDescription": "I'd love to hear from fellow photographers, potential collaborators, or anyone interested in the art of analog photography.",
+    "readOnSubstack": "Read on Substack",
+    "viewGalleries": "View Galleries",
+    "madeWith": "Made with film and digital patience in Mexico City"
+  },
+  "footer": {
+    "brand": "FILMRICK",
+    "brandDescription": "Film photography from Mexico City. Exploring the poetry between moments through analog photography.",
+    "explore": "Explore",
+    "connect": "Connect",
+    "newsletter": "Substack Newsletter",
+    "newsletterDescription": "Stories about analog photography, darkroom techniques, and the art of seeing.",
+    "copyright": "All rights reserved."
+  },
+  "common": {
+    "featuredImage": "Featured Image",
+    "portraitPhoto": "Portrait Photo",
+    "cameraPhoto": "Camera Photo",
+    "gallery": "Gallery"
+  }
+}

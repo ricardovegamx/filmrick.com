@@ -19,31 +19,31 @@ export function Quote({
     switch (variant) {
       case 'large':
         return {
-          container: 'py-[var(--section-spacing-md)] md:py-[var(--section-spacing-lg)]',
+          container: 'py-16 md:py-20',
           quote: 'text-serif-italic text-title md:text-headline leading-relaxed',
           mark: 'text-[4rem] md:text-[6rem] opacity-20',
-          spacing: 'pl-[var(--space-generous)] pr-[var(--space-lg)]'
+          spacing: 'pl-12 pr-6'
         }
       case 'featured':
         return {
-          container: 'py-[var(--section-spacing-lg)] md:py-[var(--section-spacing-xl)] border-y border-[var(--color-border-subtle)]',
+          container: 'py-20 md:py-32 border-y border-gray-200',
           quote: 'text-serif-italic text-headline md:text-display leading-relaxed text-center',
           mark: 'text-[6rem] md:text-[8rem] opacity-15',
-          spacing: 'px-[var(--space-comfortable)] md:px-[var(--space-generous)]'
+          spacing: 'px-8 md:px-12'
         }
       case 'minimal':
         return {
-          container: 'py-[var(--space-generous)]',
+          container: 'py-12',
           quote: 'text-serif-italic text-body leading-relaxed',
           mark: 'text-[2rem] opacity-25',
-          spacing: 'pl-[var(--space-comfortable)] pr-[var(--space-md)]'
+          spacing: 'pl-8 pr-4'
         }
       default:
         return {
-          container: 'py-[var(--section-spacing-sm)] md:py-[var(--section-spacing-md)]',
+          container: 'py-12 md:py-16',
           quote: 'text-serif-italic text-lg md:text-xl leading-relaxed',
           mark: 'text-[3rem] md:text-[4rem] opacity-20',
-          spacing: 'pl-[var(--space-generous)] pr-[var(--space-comfortable)]'
+          spacing: 'pl-12 pr-8'
         }
     }
   }
@@ -82,7 +82,7 @@ export function Quote({
           className={`
             ${classes.mark} 
             font-serif absolute select-none
-            text-[var(--color-text-tertiary)]
+            text-gray-400
             ${isCenter 
               ? 'top-[-1.5rem] md:top-[-2rem] left-1/2 transform -translate-x-1/2' 
               : 'top-[-0.75rem] md:top-[-1rem] left-[-0.75rem] md:left-[-1rem]'
@@ -98,7 +98,7 @@ export function Quote({
           className={`
             relative z-10 
             ${classes.quote}
-            text-[var(--color-text-primary)]
+            text-black
             ${classes.spacing}
             transition-colors duration-300
           `}
@@ -112,7 +112,7 @@ export function Quote({
             className={`
               ${classes.mark} 
               font-serif absolute select-none
-              text-[var(--color-text-tertiary)]
+              text-gray-400
               bottom-[-2.5rem] md:bottom-[-3rem] right-0 transform rotate-180
             `}
             aria-hidden="true"
@@ -126,21 +126,21 @@ export function Quote({
       {(author || source) && (
         <figcaption 
           className={`
-            mt-[var(--space-comfortable)] md:mt-[var(--space-generous)] 
+            mt-8 md:mt-12 
             text-caption 
             ${alignment === 'center' ? 'text-center' : 'text-right'}
             transition-all duration-300 hover:opacity-100 opacity-70
             hover:transform hover:translate-y-[-2px]
-            px-[var(--space-lg)]
+            px-6
           `}
         >
           {author && (
-            <cite className="not-italic font-medium text-[var(--color-text-secondary)]">
+            <cite className="not-italic font-medium text-gray-600">
               — {author}
             </cite>
           )}
           {source && (
-            <span className="ml-2 text-[var(--color-text-tertiary)] italic">
+            <span className="ml-2 text-gray-400 italic">
               {source}
             </span>
           )}

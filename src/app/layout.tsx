@@ -1,9 +1,13 @@
 import './globals.css'
-import { generateMetadata as generateSEOMetadata, generatePhotographyPortfolioStructuredData } from '@/lib/seo'
-import { ThemeProvider } from '@/components/ThemeProvider'
-import { ClientLayout } from '@/components/ClientLayout'
+import { generatePhotographyPortfolioStructuredData } from '@/lib/seo'
+import { LanguageProvider } from '@/contexts/LanguageContext'
+import { SimpleNavigation } from '@/components/SimpleNavigation'
+import { Footer } from '@/components/Footer'
 
-export const metadata = generateSEOMetadata()
+export const metadata = {
+  title: 'FILMRICK',
+  description: 'Film photography from Mexico City'
+}
 
 export default function RootLayout({
   children,
@@ -11,9 +15,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const structuredData = generatePhotographyPortfolioStructuredData()
-  
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -21,24 +25,15 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData),
           }}
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const theme = localStorage.getItem('theme') || 
-                             (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                document.documentElement.setAttribute('data-theme', theme);
-              } catch (e) {}
-            `,
-          }}
-        />
       </head>
-      <body className="min-h-screen">
-        <ThemeProvider>
-          <ClientLayout>
+      <body className="min-h-screen bg-white antialiased" suppressHydrationWarning={true}>
+        <LanguageProvider>
+          <SimpleNavigation />
+          <main className="pt-28">
             {children}
-          </ClientLayout>
-        </ThemeProvider>
+          </main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   )
