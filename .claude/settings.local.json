@@ -22,7 +22,21 @@
       "Bash(open http://localhost:3000/galleries/portraits)",
       "WebSearch",
       "WebFetch(domain:next-intl.dev)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(git push:*)",
+      "Read(//Users/rvega/**)",
+      "Bash(node:*)",
+      "Bash(curl:*)",
+      "Bash(magick:*)",
+      "Bash(PORT=3000 npm run dev)",
+      "Bash(for:*)",
+      "Bash(do)",
+      "Bash(done)",
+      "Bash(do echo -n \"Post EN $i: \")",
+      "Bash(do echo:*)",
+      "Bash(surge:*)",
+      "Bash(awk:*)",
+      "Bash(/bashes)"
     ],
     "deny": [],
     "ask": []

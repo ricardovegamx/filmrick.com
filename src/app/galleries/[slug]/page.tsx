@@ -64,7 +64,7 @@ export default async function GalleryPage({ params }: GalleryPageProps) {
       
       {/* Hero Section */}
       <section className="py-24 md:py-32 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-12 md:px-16 text-center">
+        <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 text-center">
           <h1 className="text-5xl md:text-6xl font-extralight text-gray-800 mb-8 tracking-[-0.02em] font-sans">
             {post.metadata.title}
           </h1>
@@ -79,7 +79,7 @@ export default async function GalleryPage({ params }: GalleryPageProps) {
 
       {/* Gallery Content */}
       <section className="py-16 md:py-24">
-        <div className="max-w-5xl mx-auto px-12 md:px-16">
+        <div className="max-w-7xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24">
           <article className="
             font-serif text-lg md:text-xl 
             leading-relaxed text-gray-700

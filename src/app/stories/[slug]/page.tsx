@@ -53,7 +53,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
           __html: JSON.stringify(structuredData),
         }}
       />
-      <div className="max-w-4xl mx-auto px-12 md:px-16 py-16">
+      <div className="max-w-5xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 py-16">
         <MDXContent post={post} />
       </div>
     </main>

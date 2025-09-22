@@ -20,28 +20,28 @@ export function Quote({
       case 'large':
         return {
           container: 'py-16 md:py-20',
-          quote: 'text-serif-italic text-title md:text-headline leading-relaxed',
+          quote: 'italic text-title md:text-headline leading-relaxed',
           mark: 'text-[4rem] md:text-[6rem] opacity-20',
           spacing: 'pl-12 pr-6'
         }
       case 'featured':
         return {
           container: 'py-20 md:py-32 border-y border-gray-200',
-          quote: 'text-serif-italic text-headline md:text-display leading-relaxed text-center',
+          quote: 'italic text-headline md:text-display leading-relaxed text-center',
           mark: 'text-[6rem] md:text-[8rem] opacity-15',
           spacing: 'px-8 md:px-12'
         }
       case 'minimal':
         return {
           container: 'py-12',
-          quote: 'text-serif-italic text-body leading-relaxed',
+          quote: 'italic text-body leading-relaxed',
           mark: 'text-[2rem] opacity-25',
           spacing: 'pl-8 pr-4'
         }
       default:
         return {
           container: 'py-12 md:py-16',
-          quote: 'text-serif-italic text-lg md:text-xl leading-relaxed',
+          quote: 'italic text-lg md:text-xl leading-relaxed',
           mark: 'text-[3rem] md:text-[4rem] opacity-20',
           spacing: 'pl-12 pr-8'
         }
@@ -81,7 +81,7 @@ export function Quote({
         <span 
           className={`
             ${classes.mark} 
-            font-serif absolute select-none
+            absolute select-none
             text-gray-400
             ${isCenter 
               ? 'top-[-1.5rem] md:top-[-2rem] left-1/2 transform -translate-x-1/2' 
@@ -111,7 +111,7 @@ export function Quote({
           <span 
             className={`
               ${classes.mark} 
-              font-serif absolute select-none
+              absolute select-none
               text-gray-400
               bottom-[-2.5rem] md:bottom-[-3rem] right-0 transform rotate-180
             `}
@@ -135,7 +135,7 @@ export function Quote({
           `}
         >
           {author && (
-            <cite className="not-italic font-medium text-gray-600">
+            <cite className="not-italic font-bold text-gray-600">
               — {author}
             </cite>
           )}

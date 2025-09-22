@@ -1,0 +1,36 @@
+post_id,timestamp,email,post_type,post_audience,active_subscription,country,city,region,device_type,client_os,client_type,user_agent
+162668258,2025-05-02T04:57:00.720Z,alejandro@adlcworld.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T05:00:18.276Z,deltorophoto@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T05:01:44.380Z,admagnusson@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T05:01:57.246Z,alejandro@adlcworld.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T05:02:15.583Z,alexislee.digitalcreative@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T05:02:27.721Z,alejandro@adlcworld.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T05:03:27.575Z,muhammadraufan@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T05:03:57.730Z,alejandro@adlcworld.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T05:12:42.631Z,michael_adamou@yahoo.co.uk,newsletter,everyone,true,US,,,,,,Mozilla/5.0
+162668258,2025-05-02T05:12:55.431Z,foppaxl@gmail.com,newsletter,everyone,true,DE,,,,,,Mozilla/5.0
+162668258,2025-05-02T06:57:37.764Z,cedric+substack@raguenaud.org,newsletter,everyone,true,FR,,,,,,"Mozilla/5.0 (Linux; Android 15; 23078PND5G Build/AP3A.240617.008; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/135.0.7049.111 Mobile Safari/537.36"
+162668258,2025-05-02T08:34:00.656Z,leonardamador2k@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T08:34:31.419Z,leonardamador2k@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T08:44:29.631Z,foppaxl@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0
+162668258,2025-05-02T09:58:33.696Z,leonardamador2k@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T10:16:13.613Z,razlynlysaughtart@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T11:03:28.660Z,icings-greyer-00@icloud.com,newsletter,everyone,true,GB,,,,,,Mozilla/5.0
+162668258,2025-05-02T11:50:21.652Z,danofhamilton@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0
+162668258,2025-05-02T14:31:29.877Z,homeontherangefinder@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0
+162668258,2025-05-02T15:23:36.092Z,mezelaw@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T15:23:39.454Z,mezelaw@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T15:31:41.677Z,dannakiedis@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T15:32:11.737Z,dannakiedis@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T15:33:41.763Z,dannakiedis@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T15:37:47.801Z,cedric+substack@raguenaud.org,newsletter,everyone,true,FR,,,,,,"Mozilla/5.0 (Linux; Android 15; 23078PND5G Build/AP3A.240617.008; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/135.0.7049.111 Mobile Safari/537.36"
+162668258,2025-05-02T23:39:44.875Z,danofhamilton@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-02T23:46:07.578Z,dannakiedis@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-03T04:28:01.722Z,dannakiedis@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-03T09:01:27.842Z,eric.kowalczyk1@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-03T12:49:38.511Z,danofhamilton@gmail.com,newsletter,everyone,true,CA,,,,,,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)"
+162668258,2025-05-04T16:50:57.852Z,alejandro@adlcworld.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-04T20:33:40.082Z,alejandro@adlcworld.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-05T05:50:23.812Z,admagnusson@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)
+162668258,2025-05-05T15:12:15.548Z,michael_adamou@yahoo.co.uk,newsletter,everyone,true,GB,,,,,,Mozilla/5.0
+162668258,2025-05-06T16:17:38.109Z,dannakiedis@gmail.com,newsletter,everyone,true,US,,,,,,Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)

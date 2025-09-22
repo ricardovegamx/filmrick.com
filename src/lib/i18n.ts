@@ -17,6 +17,9 @@ export interface Translations {
     featuredWork: string
     featuredDescription: string
     viewAllGalleries: string
+    featuredStory: string
+    latestFromBlog: string
+    readFullStory: string
     quote: string
     quoteAuthor: string
   }
@@ -96,6 +99,9 @@ export const translations: Record<Language, Translations> = {
       featuredWork: 'Trabajo Destacado',
       featuredDescription: 'Exploraciones recientes en luz, sombra y conexión humana.',
       viewAllGalleries: 'Ver Todas las Galerías →',
+      featuredStory: 'Historia Destacada',
+      latestFromBlog: 'Lo Más Reciente del Blog',
+      readFullStory: 'Leer Historia Completa',
       quote: 'La fotografía no se trata solo de congelar el tiempo; se trata de entender la poesía que existe en el espacio entre momentos.',
       quoteAuthor: '— Sobre el arte de ver'
     },
@@ -173,6 +179,9 @@ export const translations: Record<Language, Translations> = {
       featuredWork: 'Featured Work',
       featuredDescription: 'Recent explorations in light, shadow, and human connection.',
       viewAllGalleries: 'View All Galleries →',
+      featuredStory: 'Featured Story',
+      latestFromBlog: 'Latest from the Blog',
+      readFullStory: 'Read Full Story',
       quote: 'Photography is not just about freezing time; it\'s about understanding the poetry that exists in the space between moments.',
       quoteAuthor: '— On the art of seeing'
     },

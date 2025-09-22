@@ -20,39 +20,39 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 mb-12">
           {/* Brand section */}
           <div className="space-y-6">
-            <Link href={getLocalizedUrl('/')} className="text-2xl font-extralight tracking-wider text-gray-800 font-sans">
+            <Link href={getLocalizedUrl('/')} className="text-xl font-bold tracking-ultra-wide text-gray-800">
               {t.footer.brand}
             </Link>
-            <p className="text-gray-600 leading-relaxed font-serif text-sm">
+            <p className="text-gray-600 leading-relaxed text-xs">
               {t.footer.brandDescription}
             </p>
           </div>
 
           {/* Navigation */}
           <div className="space-y-6">
-            <h3 className="text-sm font-medium uppercase tracking-widest text-gray-800 font-sans">{t.footer.explore}</h3>
+            <h3 className="text-xs font-bold uppercase tracking-ultra-wide text-gray-800">{t.footer.explore}</h3>
             <nav className="space-y-3">
-              <Link 
-                href={getLocalizedUrl('/galleries')} 
-                className="block text-gray-600 hover:text-gray-800 transition-colors font-serif text-sm"
+              <Link
+                href={getLocalizedUrl('/galleries')}
+                className="block text-gray-600 hover:text-gray-800 transition-colors text-xs"
               >
                 {t.navigation.galleries}
               </Link>
-              <Link 
-                href={getLocalizedUrl('/stories')} 
-                className="block text-gray-600 hover:text-gray-800 transition-colors font-serif text-sm"
+              <Link
+                href={getLocalizedUrl('/stories')}
+                className="block text-gray-600 hover:text-gray-800 transition-colors text-xs"
               >
                 {t.navigation.stories}
               </Link>
-              <Link 
-                href={getLocalizedUrl('/my-gear')} 
-                className="block text-gray-600 hover:text-gray-800 transition-colors font-serif text-sm"
+              <Link
+                href={getLocalizedUrl('/my-gear')}
+                className="block text-gray-600 hover:text-gray-800 transition-colors text-xs"
               >
                 {t.navigation.myGear}
               </Link>
-              <Link 
-                href={getLocalizedUrl('/about')} 
-                className="block text-gray-600 hover:text-gray-800 transition-colors font-serif text-sm"
+              <Link
+                href={getLocalizedUrl('/about')}
+                className="block text-gray-600 hover:text-gray-800 transition-colors text-xs"
               >
                 {t.navigation.about}
               </Link>
@@ -61,17 +61,17 @@ export function Footer() {
 
           {/* Connect section */}
           <div className="space-y-6">
-            <h3 className="text-sm font-medium uppercase tracking-widest text-gray-800 font-sans">{t.footer.connect}</h3>
+            <h3 className="text-xs font-bold uppercase tracking-ultra-wide text-gray-800">{t.footer.connect}</h3>
             <div className="space-y-3">
-              <a 
+              <a
                 href="https://filmrick.substack.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-gray-600 hover:text-gray-800 transition-colors font-serif text-sm"
+                className="block text-gray-600 hover:text-gray-800 transition-colors text-xs"
               >
                 {t.footer.newsletter}
               </a>
-              <p className="text-xs text-gray-500 font-serif">
+              <p className="text-xs text-gray-500">
                 {t.footer.newsletterDescription}
               </p>
             </div>
@@ -80,10 +80,10 @@ export function Footer() {
 
         {/* Bottom section */}
         <div className="pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-500 font-sans">
+          <p className="text-xs text-gray-500">
             © {new Date().getFullYear()} {t.footer.brand}. {t.footer.copyright}
           </p>
-          <p className="text-xs text-gray-500 font-serif">
+          <p className="text-xs text-gray-500">
             {t.about.madeWith}
           </p>
         </div>

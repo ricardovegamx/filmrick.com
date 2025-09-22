@@ -1,66 +1,92 @@
 import Link from 'next/link'
-import { getAllPosts } from '@/lib/mdx'
+import { getPaginatedPosts } from '@/lib/mdx'
+import { Pagination } from '@/components/Pagination'
 
 export default function Stories() {
-  const stories = getAllPosts('stories')
+  const { posts: stories, totalPages, currentPage, hasNextPage, hasPreviousPage } = getPaginatedPosts('stories', 1, 6) // Default to Spanish, page 1, 6 posts
 
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="py-24 md:py-32 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-12 md:px-16 text-center">
-          <h1 className="text-5xl md:text-6xl font-extralight text-gray-800 mb-8 tracking-[-0.02em] font-sans">
-            Stories
+        <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 text-center">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 tracking-tight">
+            Historias
           </h1>
           <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
-          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif max-w-3xl mx-auto">
-            Tales from the analog world: camera reviews, darkroom adventures, and reflections on the art of film photography.
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+            Relatos del mundo analógico: reseñas de cámaras, aventuras en el cuarto oscuro y reflexiones sobre el arte de la fotografía en película.
           </p>
         </div>
       </section>
 
-      {/* Stories List */}
+      {/* Stories Grid */}
       <section className="py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-12 md:px-16">
-          {stories.length > 0 ? (
-            <div className="space-y-12">
-              {stories.map((story, index) => (
-                <article key={story.metadata.slug} className={`
-                  group pb-12
-                  ${index < stories.length - 1 ? 'border-b border-gray-100' : ''}
-                `}>
-                  <Link href={`/stories/${story.metadata.slug}`} className="block">
-                    <div className="space-y-4">
-                      <h2 className="text-3xl md:text-4xl font-light text-gray-800 group-hover:text-gray-600 transition-colors font-sans leading-tight">
-                        {story.metadata.title}
-                      </h2>
-                      
-                      {story.metadata.description && (
-                        <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-serif max-w-3xl">
+        <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24">
+          {stories.length === 0 ? (
+            <div className="text-center py-24">
+              <p className="text-lg text-gray-600 mb-4">Aún no hay historias disponibles.</p>
+              <p className="text-gray-500">Regresa pronto para nuevos relatos del mundo analógico.</p>
+            </div>
+          ) : (
+            <div className="grid gap-16 md:gap-24">
+              {stories.map((story) => (
+                <article key={story.metadata.slug} className="group">
+                  <Link href={`/stories/${story.metadata.slug}`}>
+                    <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+
+                      {/* Story Image */}
+                      <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
+                        <img
+                          src={`/images/stories/${story.metadata.slug}/hero.jpg`}
+                          alt={story.metadata.title}
+                          className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        />
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
+                      </div>
+
+                      {/* Story Content */}
+                      <div className="space-y-6">
+                        <div className="space-y-4">
+                          <div className="text-xs uppercase tracking-ultra-wide text-gray-500 font-bold">
+                            {story.metadata.date && new Date(story.metadata.date).toLocaleDateString('es-ES', {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric'
+                            })}
+                          </div>
+                          <h2 className="text-lg md:text-xl font-bold text-gray-900 leading-tight group-hover:text-gray-700 transition-colors tracking-tight">
+                            {story.metadata.title}
+                          </h2>
+                        </div>
+
+                        <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                           {story.metadata.description}
                         </p>
-                      )}
-                      
-                      {story.metadata.date && (
-                        <time className="block text-sm text-gray-500 font-sans uppercase tracking-wider">
-                          {new Date(story.metadata.date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}
-                        </time>
-                      )}
+
+                        <div className="pt-4">
+                          <span className="inline-flex items-center text-xs font-bold text-gray-900 group-hover:text-gray-700 transition-colors tracking-wider uppercase">
+                            Leer Historia
+                            <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                          </span>
+                        </div>
+                      </div>
+
                     </div>
                   </Link>
                 </article>
               ))}
             </div>
-          ) : (
-            <div className="text-center py-16">
-              <p className="text-xl text-gray-600 font-serif mb-8">No stories available yet.</p>
-              <p className="text-gray-500 font-serif">Check back soon for tales from the analog world.</p>
-            </div>
           )}
+
+          {/* Pagination */}
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            basePath="/stories"
+            hasNextPage={hasNextPage}
+            hasPreviousPage={hasPreviousPage}
+          />
         </div>
       </section>
     </main>

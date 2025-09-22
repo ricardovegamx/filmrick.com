@@ -54,10 +54,10 @@ export function Gallery({
       .filter(child => {
         if (!isValidElement(child)) return false
         // Check if it's a GalleryImage by checking props structure
-        return child.props && 'src' in child.props && 'alt' in child.props
+        return child.props && typeof child.props === 'object' && child.props !== null && 'src' in child.props && 'alt' in child.props
       })
       .map(child => {
-        const props = child.props as GalleryImageProps
+        const props = (child as React.ReactElement).props as GalleryImageProps
         return {
           src: props.src,
           alt: props.alt,
@@ -118,7 +118,7 @@ export function Gallery({
       >
         {Children.map(children, (child, index) => {
           if (isValidElement(child) && child.type === GalleryImage) {
-            return cloneElement(child, { ...child.props, index })
+            return cloneElement(child, { ...(child.props as any), index })
           }
           return child
         })}

@@ -1,37 +1,37 @@
 ---
-title: "About FILMRICK"
-description: "Film photographer based in Mexico City, exploring the poetry between moments through analog photography"
+title: "Acerca de FILMRICK"
+description: "Fotógrafo analógico radicado en Ciudad de México, explorando la poesía entre momentos a través de la fotografía analógica"
 ---
 
-I'm a film photographer based in Mexico City, dedicated to exploring the quiet spaces between moments through analog photography. My work captures the intersection of light, shadow, and human emotion in both urban and intimate settings.
+Soy un fotógrafo analógico radicado en Ciudad de México, dedicado a explorar los espacios silenciosos entre momentos a través de la fotografía analógica. Mi trabajo captura la intersección de luz, sombra y emoción humana tanto en entornos urbanos como íntimos.
 
-## Philosophy
+## Filosofía
 
-Photography is not just about freezing time—it's about understanding the poetry that exists in the space between moments. Each frame on film is precious, teaching patience and intention. In our digital age, I find profound meaning in the deliberate, contemplative process of analog photography.
+La fotografía no se trata solo de congelar el tiempo, sino de entender la poesía que existe en el espacio entre momentos. Cada cuadro en película es precioso, enseñando paciencia e intención. En nuestra era digital, encuentro un significado profundo en el proceso deliberado y contemplativo de la fotografía analógica.
 
-*"In film photography, every shot is a conversation between light and chemistry, between intention and chance. This dialogue creates something that digital cannot replicate—soul."*
+*"En la fotografía analógica, cada toma es una conversación entre luz y química, entre intención y casualidad. Este diálogo crea algo que lo digital no puede replicar: alma."*
 
-## Process
+## Proceso
 
-Working exclusively with film cameras, I embrace the uncertainty and magic of analog photography. From the careful composition through the viewfinder to the anticipation of development, each image is a journey of discovery. The grain, the imperfections, the happy accidents—these are not flaws but the essence of what makes film photography alive.
+Trabajando exclusivamente con cámaras de película, abrazo la incertidumbre y la magia de la fotografía analógica. Desde la composición cuidadosa a través del visor hasta la anticipación del revelado, cada imagen es un viaje de descubrimiento. El grano, las imperfecciones, los accidentes felices: estos no son defectos sino la esencia de lo que hace viva a la fotografía analógica.
 
-My darkroom practice is meditative, a place where time slows down and images emerge gradually from developer solutions. This process teaches patience and respect for the craft, values that inform every aspect of my work.
+Mi práctica en el cuarto oscuro es meditativa, un lugar donde el tiempo se ralentiza y las imágenes emergen gradualmente de las soluciones reveladoras. Este proceso enseña paciencia y respeto por el oficio, valores que informan cada aspecto de mi trabajo.
 
-## Current Work
+## Trabajo Actual
 
-My recent projects explore themes of solitude, connection, and the beauty found in everyday moments. I'm particularly drawn to:
+Mis proyectos recientes exploran temas de soledad, conexión y la belleza encontrada en momentos cotidianos. Me siento particularmente atraído por:
 
-- The way light moves through urban spaces
-- Quiet moments of human interaction
-- The texture and character of analog grain
-- The honest imperfections that make life beautiful
+- La forma en que la luz se mueve a través de espacios urbanos
+- Momentos silenciosos de interacción humana
+- La textura y el carácter del grano analógico
+- Las imperfecciones honestas que hacen hermosa la vida
 
-## Connect
+## Conectar
 
-For collaborations, print inquiries, or conversations about photography, reach out through my [Substack newsletter](https://filmrick.substack.com) where I share stories about the analog process, darkroom techniques, and the philosophical aspects of seeing through film.
+Para colaboraciones, consultas sobre impresiones o conversaciones sobre fotografía, contáctame a través de mi [newsletter de Substack](https://filmrick.substack.com) donde comparto historias sobre el proceso analógico, técnicas de cuarto oscuro y los aspectos filosóficos de ver a través de la película.
 
-## Recent Work
+## Trabajo Reciente
 
-- *Season Two Begins* - Personal essay on returning to film photography (2024)
-- *Portraits* - Ongoing series exploring human connection through analog photography
-- Various street photography projects throughout Mexico City
+- *Season Two Begins* - Ensayo personal sobre el regreso a la fotografía analógica (2024)
+- *Retratos* - Serie en curso explorando la conexión humana a través de la fotografía analógica
+- Varios proyectos de fotografía callejera por toda la Ciudad de México
