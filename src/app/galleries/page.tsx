@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/mdx'
+import { getTranslations } from '@/lib/i18n'
 
 export default function Galleries() {
   const galleries = getAllPosts('galleries')
+  const t = getTranslations('es')
 
   return (
     <main className="min-h-screen bg-white">
@@ -10,11 +12,11 @@ export default function Galleries() {
       <section className="py-24 md:py-32 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-8 tracking-tight">
-            Galerías
+            {t.galleries.title}
           </h1>
           <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
           <p className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-            Colecciones de momentos capturados en película, cada uno contando una historia a través de luz, sombra y emoción.
+            {t.galleries.description}
           </p>
         </div>
       </section>
@@ -30,7 +32,7 @@ export default function Galleries() {
                     {/* Featured Image Placeholder */}
                     <div className="relative aspect-[4/5] mb-6 bg-gray-100 border border-gray-200 overflow-hidden group-hover:shadow-lg transition-all duration-300">
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-gray-400 text-sm uppercase tracking-ultra-wide font-bold">Imagen Destacada</span>
+                        <span className="text-gray-400 text-sm uppercase tracking-ultra-wide font-bold">{t.common.featuredImage}</span>
                       </div>
                       {/* Subtle overlay on hover */}
                       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
@@ -55,8 +57,8 @@ export default function Galleries() {
             </div>
           ) : (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-600 mb-8">Aún no hay galerías disponibles.</p>
-              <p className="text-gray-500">Regresa pronto para nuevas colecciones de fotografía analógica.</p>
+              <p className="text-xl text-gray-600 mb-8">{t.galleries.noGalleries}</p>
+              <p className="text-gray-500">{t.galleries.checkBack}</p>
             </div>
           )}
         </div>

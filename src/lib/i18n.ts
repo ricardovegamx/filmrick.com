@@ -34,6 +34,7 @@ export interface Translations {
     description: string
     noStories: string
     checkBack: string
+    readStory: string
   }
   myGear: {
     title: string
@@ -118,7 +119,8 @@ export const translations: Record<Language, Translations> = {
       title: 'Historias',
       description: 'Relatos del mundo analógico: reseñas de cámaras, aventuras del cuarto oscuro y reflexiones sobre el arte de la fotografía analógica.',
       noStories: 'Aún no hay historias disponibles.',
-      checkBack: 'Regresa pronto para relatos del mundo analógico.'
+      checkBack: 'Regresa pronto para relatos del mundo analógico.',
+      readStory: 'Leer Historia'
     },
     myGear: {
       title: 'Mi Equipo',
@@ -201,7 +203,8 @@ export const translations: Record<Language, Translations> = {
       title: 'Stories',
       description: 'Tales from the analog world: camera reviews, darkroom adventures, and reflections on the art of film photography.',
       noStories: 'No stories available yet.',
-      checkBack: 'Check back soon for tales from the analog world.'
+      checkBack: 'Check back soon for tales from the analog world.',
+      readStory: 'Read Story'
     },
     myGear: {
       title: 'My Gear',

@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import { getPaginatedPosts } from '@/lib/mdx'
+import { getTranslations } from '@/lib/i18n'
 import { Pagination } from '@/components/Pagination'
 
 export default function Stories() {
   const { posts: stories, totalPages, currentPage, hasNextPage, hasPreviousPage } = getPaginatedPosts('stories', 1, 6) // Default to Spanish, page 1, 6 posts
+  const t = getTranslations('es')
 
   return (
     <main className="min-h-screen bg-white">
@@ -11,11 +13,11 @@ export default function Stories() {
       <section className="py-24 md:py-32 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 text-center">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 tracking-tight">
-            Historias
+            {t.stories.title}
           </h1>
           <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-            Relatos del mundo analógico: reseñas de cámaras, aventuras en el cuarto oscuro y reflexiones sobre el arte de la fotografía en película.
+            {t.stories.description}
           </p>
         </div>
       </section>
@@ -25,8 +27,8 @@ export default function Stories() {
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24">
           {stories.length === 0 ? (
             <div className="text-center py-24">
-              <p className="text-lg text-gray-600 mb-4">Aún no hay historias disponibles.</p>
-              <p className="text-gray-500">Regresa pronto para nuevos relatos del mundo analógico.</p>
+              <p className="text-lg text-gray-600 mb-4">{t.stories.noStories}</p>
+              <p className="text-gray-500">{t.stories.checkBack}</p>
             </div>
           ) : (
             <div className="grid gap-16 md:gap-24">
@@ -66,7 +68,7 @@ export default function Stories() {
 
                         <div className="pt-4">
                           <span className="inline-flex items-center text-xs font-bold text-gray-900 group-hover:text-gray-700 transition-colors tracking-wider uppercase">
-                            Leer Historia
+                            {t.stories.readStory}
                             <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                           </span>
                         </div>

@@ -68,7 +68,7 @@ export default function Stories() {
 
                         <div className="pt-4">
                           <span className="inline-flex items-center text-xs font-bold text-gray-900 group-hover:text-gray-700 transition-colors tracking-wider uppercase">
-                            Read Story
+                            {t.stories.readStory}
                             <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                           </span>
                         </div>
