@@ -1,10 +1,12 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export function SimpleNavigation() {
   const { t, language, setLanguage } = useLanguage()
+  const pathname = usePathname()
 
   // Helper function to get localized URL
   const getLocalizedUrl = (path: string) => {
@@ -13,12 +15,21 @@ export function SimpleNavigation() {
     }
     return path
   }
+
+  // Helper function to check if link is active
+  const isActiveLink = (path: string) => {
+    const localizedPath = getLocalizedUrl(path)
+    if (path === '/') {
+      return pathname === localizedPath
+    }
+    return pathname.startsWith(localizedPath)
+  }
   
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-50">
       <div className="max-w-7xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24">
         <div className="flex items-center justify-between h-28">
-          <Link href={getLocalizedUrl('/')} className="text-xl font-bold tracking-ultra-wide text-gray-800 hover:text-gray-600 transition-colors duration-300">
+          <Link href={getLocalizedUrl('/')} className="text-xl font-serif font-bold tracking-wide text-gray-800 hover:text-gray-600 transition-colors duration-300">
             FILMRICK
           </Link>
           
@@ -26,31 +37,51 @@ export function SimpleNavigation() {
             <div className="hidden md:flex items-center gap-12">
               <Link
                 href={getLocalizedUrl('/')}
-                className="text-gray-800 hover:text-gray-600 transition-all duration-300 font-normal text-sm tracking-wider uppercase text-xs"
+                className={`relative text-gray-800 hover:text-gray-600 transition-all duration-300 font-sans font-medium text-sm tracking-wider uppercase ${
+                  isActiveLink('/')
+                    ? 'after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-[2px] after:bg-gray-800'
+                    : ''
+                }`}
               >
                 {t.navigation.home}
               </Link>
               <Link
                 href={getLocalizedUrl('/galleries')}
-                className="text-gray-800 hover:text-gray-600 transition-all duration-300 font-normal text-sm tracking-wider uppercase text-xs"
+                className={`relative text-gray-800 hover:text-gray-600 transition-all duration-300 font-sans font-medium text-sm tracking-wider uppercase ${
+                  isActiveLink('/galleries')
+                    ? 'after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-[2px] after:bg-gray-800'
+                    : ''
+                }`}
               >
                 {t.navigation.galleries}
               </Link>
               <Link
                 href={getLocalizedUrl('/stories')}
-                className="text-gray-800 hover:text-gray-600 transition-all duration-300 font-normal text-sm tracking-wider uppercase text-xs"
+                className={`relative text-gray-800 hover:text-gray-600 transition-all duration-300 font-sans font-medium text-sm tracking-wider uppercase ${
+                  isActiveLink('/stories')
+                    ? 'after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-[2px] after:bg-gray-800'
+                    : ''
+                }`}
               >
                 {t.navigation.stories}
               </Link>
               <Link
                 href={getLocalizedUrl('/my-gear')}
-                className="text-gray-800 hover:text-gray-600 transition-all duration-300 font-normal text-sm tracking-wider uppercase text-xs"
+                className={`relative text-gray-800 hover:text-gray-600 transition-all duration-300 font-sans font-medium text-sm tracking-wider uppercase ${
+                  isActiveLink('/my-gear')
+                    ? 'after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-[2px] after:bg-gray-800'
+                    : ''
+                }`}
               >
                 {t.navigation.myGear}
               </Link>
               <Link
                 href={getLocalizedUrl('/about')}
-                className="text-gray-800 hover:text-gray-600 transition-all duration-300 font-normal text-sm tracking-wider uppercase text-xs"
+                className={`relative text-gray-800 hover:text-gray-600 transition-all duration-300 font-sans font-medium text-sm tracking-wider uppercase ${
+                  isActiveLink('/about')
+                    ? 'after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-[2px] after:bg-gray-800'
+                    : ''
+                }`}
               >
                 {t.navigation.about}
               </Link>

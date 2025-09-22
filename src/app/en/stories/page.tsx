@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getPaginatedPosts } from '@/lib/mdx'
 import { getTranslations } from '@/lib/i18n'
 import { Pagination } from '@/components/Pagination'
@@ -39,10 +40,11 @@ export default function Stories() {
 
                       {/* Story Image */}
                       <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
-                        <img
+                        <Image
                           src={`/images/stories/${story.metadata.slug}/hero.jpg`}
                           alt={story.metadata.title}
-                          className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                          fill
+                          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                         />
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
                       </div>

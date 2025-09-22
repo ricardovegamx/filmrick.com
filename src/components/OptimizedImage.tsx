@@ -45,7 +45,7 @@ export function OptimizedImage({
     onDragStart: disableDownload ? (e: React.DragEvent) => e.preventDefault() : undefined,
   }
 
-  return <Image {...imageProps} />
+  return <Image {...imageProps} alt={props.alt || ""} />
 }
 
 // Pre-configured variants for common use cases

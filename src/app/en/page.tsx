@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getAllPosts } from '@/lib/mdx'
 import { getTranslations } from '@/lib/i18n'
 
@@ -29,10 +30,12 @@ export default function Home() {
                 <div className="relative aspect-[3/4] bg-gray-50 overflow-hidden">
 
                   {/* Rick's Portrait */}
-                  <img
+                  <Image
                     src="/images/rick.jpg"
                     alt={t.common.filmPhotographerAlt}
-                    className="absolute inset-0 w-full h-full object-cover grayscale"
+                    fill
+                    priority
+                    className="object-cover grayscale"
                   />
 
                   {/* Film strip edge */}
@@ -230,10 +233,11 @@ export default function Home() {
 
                 {/* Story Image */}
                 <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
-                  <img
+                  <Image
                     src="/images/stories/1/hero.jpg"
                     alt={latestStory.metadata.title}
-                    className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    fill
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
                 </div>

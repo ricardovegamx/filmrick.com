@@ -36,12 +36,12 @@ export function MDXContent({ post }: MDXContentProps) {
 
         {/* Magazine headline */}
         <div className="space-y-6">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-[1.1] tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 leading-tight tracking-headline">
             {post.metadata.title}
           </h1>
 
           {post.metadata.description && (
-            <p className="text-lg md:text-xl text-gray-700 leading-[1.3] max-w-[42rem]">
+            <p className="text-editorial text-gray-700 leading-editorial max-w-[42rem]">
               {post.metadata.description}
             </p>
           )}
@@ -59,18 +59,18 @@ export function MDXContent({ post }: MDXContentProps) {
       </header>
       <div className="
         max-w-[42rem]
-        text-sm md:text-base
-        leading-[1.3] text-gray-700
+        text-editorial
+        leading-editorial text-gray-700
         [&>p]:mb-[1.5em]
-        [&>p]:leading-[1.3]
+        [&>p]:leading-editorial
         [&>em]:italic
-        [&>strong]:font-bold
-        [&>h2]:text-lg [&>h2]:font-bold [&>h2]:mt-[3em] [&>h2]:mb-[1.5em] [&>h2]:text-gray-800 [&>h2]:leading-[1.2]
-        [&>h3]:text-base [&>h3]:font-bold [&>h3]:mt-[2.5em] [&>h3]:mb-[1em] [&>h3]:text-gray-800 [&>h3]:leading-[1.2]
-        [&>blockquote]:border-l-4 [&>blockquote]:border-gray-300 [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-gray-700 [&>blockquote]:my-[2em] [&>blockquote]:leading-[1.4]
-        [&>ul]:my-[1.5em] [&>ul]:pl-6 [&>ul]:leading-[1.3]
-        [&>ol]:my-[1.5em] [&>ol]:pl-6 [&>ol]:leading-[1.3]
-        [&_li]:mb-[0.5em] [&_li]:leading-[1.3]
+        [&>strong]:font-semibold
+        [&>h2]:text-xl [&>h2]:md:text-2xl [&>h2]:font-serif [&>h2]:font-bold [&>h2]:mt-[3em] [&>h2]:mb-[1.5em] [&>h2]:text-gray-800 [&>h2]:leading-tight [&>h2]:tracking-headline
+        [&>h3]:text-lg [&>h3]:md:text-xl [&>h3]:font-serif [&>h3]:font-bold [&>h3]:mt-[2.5em] [&>h3]:mb-[1em] [&>h3]:text-gray-800 [&>h3]:leading-tight [&>h3]:tracking-headline
+        [&>blockquote]:border-l-4 [&>blockquote]:border-gray-300 [&>blockquote]:pl-6 [&>blockquote]:font-serif [&>blockquote]:italic [&>blockquote]:text-gray-700 [&>blockquote]:my-[2em] [&>blockquote]:leading-editorial [&>blockquote]:text-lg
+        [&>ul]:my-[1.5em] [&>ul]:pl-6 [&>ul]:leading-editorial
+        [&>ol]:my-[1.5em] [&>ol]:pl-6 [&>ol]:leading-editorial
+        [&_li]:mb-[0.5em] [&_li]:leading-editorial
       ">
         <MDXRemote source={post.content} components={components} />
       </div>

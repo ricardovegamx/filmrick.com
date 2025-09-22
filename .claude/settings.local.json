@@ -36,7 +36,9 @@
       "Bash(do echo:*)",
       "Bash(surge:*)",
       "Bash(awk:*)",
-      "Bash(/bashes)"
+      "Bash(/bashes)",
+      "Bash(npm start)",
+      "Bash(pkill:*)"
     ],
     "deny": [],
     "ask": []

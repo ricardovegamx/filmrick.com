@@ -29,6 +29,23 @@ export function ImageModal({
   const [isLoaded, setIsLoaded] = useState(false)
   const [isTransitioning, setIsTransitioning] = useState(false)
   
+  // Transition handlers with Japanese Ma timing
+  const handleNext = () => {
+    if (!onNext || currentIndex >= totalImages - 1 || isTransitioning) return
+    setIsTransitioning(true)
+    setIsLoaded(false)
+    // 150ms delay creates subtle pause - Ma (間) between moments
+    setTimeout(() => onNext(), 150)
+  }
+
+  const handlePrevious = () => {
+    if (!onPrevious || currentIndex <= 0 || isTransitioning) return
+    setIsTransitioning(true)
+    setIsLoaded(false)
+    // 150ms delay creates subtle pause - Ma (間) between moments
+    setTimeout(() => onPrevious(), 150)
+  }
+
   // Keyboard navigation
   useEffect(() => {
     if (!isOpen) return
@@ -53,12 +70,12 @@ export function ImageModal({
 
     document.addEventListener('keydown', handleKeyDown)
     document.body.style.overflow = 'hidden' // Prevent background scrolling
-    
+
     return () => {
       document.removeEventListener('keydown', handleKeyDown)
       document.body.style.overflow = 'unset'
     }
-  }, [isOpen, onClose, onNext, onPrevious, currentIndex, totalImages])
+  }, [isOpen, onClose, handleNext, handlePrevious, currentIndex, totalImages])
 
   // Reset loaded state when image changes
   useEffect(() => {
@@ -69,22 +86,6 @@ export function ImageModal({
     return () => clearTimeout(timer)
   }, [src])
 
-  // Transition handlers with Japanese Ma timing
-  const handleNext = () => {
-    if (!onNext || currentIndex >= totalImages - 1 || isTransitioning) return
-    setIsTransitioning(true)
-    setIsLoaded(false)
-    // 150ms delay creates subtle pause - Ma (間) between moments
-    setTimeout(() => onNext(), 150)
-  }
-
-  const handlePrevious = () => {
-    if (!onPrevious || currentIndex <= 0 || isTransitioning) return
-    setIsTransitioning(true)
-    setIsLoaded(false)
-    // 150ms delay creates subtle pause - Ma (間) between moments  
-    setTimeout(() => onPrevious(), 150)
-  }
 
   if (!isOpen) return null
 

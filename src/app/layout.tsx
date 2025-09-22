@@ -1,15 +1,24 @@
 import "./globals.css";
-import { IBM_Plex_Mono } from "next/font/google";
+import { Merriweather, Crimson_Text } from "next/font/google";
 import { generatePhotographyPortfolioStructuredData } from "@/lib/seo";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { SimpleNavigation } from "@/components/SimpleNavigation";
 import { Footer } from "@/components/Footer";
 
-const ibmPlexMono = IBM_Plex_Mono({
-	weight: ["400", "700"],
+const merriweather = Merriweather({
+	weight: ["300", "400", "700", "900"],
 	style: ["normal", "italic"],
 	subsets: ["latin"],
 	display: "swap",
+	variable: "--font-merriweather",
+});
+
+const crimsonText = Crimson_Text({
+	weight: ["400", "600", "700"],
+	style: ["normal", "italic"],
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-crimson",
 });
 
 export const metadata = {
@@ -35,7 +44,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body
-				className={`min-h-screen bg-white antialiased ${ibmPlexMono.className}`}
+				className={`min-h-screen bg-white antialiased ${merriweather.variable} ${crimsonText.variable}`}
 				suppressHydrationWarning={true}
 			>
 				<LanguageProvider>

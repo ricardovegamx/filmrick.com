@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getAllPosts } from '@/lib/mdx'
 import { getTranslations } from '@/lib/i18n'
 
@@ -29,10 +30,12 @@ export default function Home() {
                 <div className="relative aspect-[3/4] bg-gray-50 overflow-hidden">
 
                   {/* Rick's Portrait */}
-                  <img
+                  <Image
                     src="/images/rick.jpg"
                     alt={t.common.filmPhotographerAlt}
-                    className="absolute inset-0 w-full h-full object-cover grayscale"
+                    fill
+                    className="object-cover grayscale"
+                    priority
                   />
 
                   {/* Film strip edge */}
@@ -65,12 +68,12 @@ export default function Home() {
 
               {/* Magazine headline */}
               <div className="space-y-6">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-[1.1] tracking-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-black leading-tight tracking-headline">
                   {t.home.title}
                 </h1>
 
                 {/* Editorial subtitle */}
-                <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-lg">
+                <p className="text-editorial text-gray-700 leading-editorial max-w-lg">
                   {t.home.description}
                 </p>
               </div>
@@ -125,10 +128,10 @@ export default function Home() {
       {/* Featured Work Preview */}
       <section className="max-w-7xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 py-32 md:py-40 border-t border-gray-100">
         <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-800 mb-12 leading-tight tracking-headline">
             {t.home.featuredWork}
           </h2>
-          <p className="text-base text-gray-700 max-w-lg mx-auto leading-relaxed">
+          <p className="text-editorial text-gray-700 max-w-lg mx-auto leading-editorial">
             {t.home.featuredDescription}
           </p>
         </div>
@@ -217,10 +220,10 @@ export default function Home() {
       {latestStory && (
         <section className="max-w-7xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 py-24 md:py-32 border-t border-gray-100">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-6 leading-tight tracking-headline">
               {t.home.featuredStory}
             </h2>
-            <p className="text-base text-gray-600">
+            <p className="text-editorial text-gray-600 leading-editorial">
               {t.home.latestFromBlog}
             </p>
           </div>
@@ -231,10 +234,11 @@ export default function Home() {
 
                 {/* Story Image */}
                 <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
-                  <img
+                  <Image
                     src="/images/stories/1/hero.jpg"
                     alt={latestStory.metadata.title}
-                    className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    fill
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
                 </div>
@@ -249,12 +253,12 @@ export default function Home() {
                         day: 'numeric'
                       })}
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight group-hover:text-gray-700 transition-colors tracking-tight">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-serif font-bold text-gray-900 leading-tight group-hover:text-gray-700 transition-colors tracking-headline">
                       {latestStory.metadata.title}
                     </h3>
                   </div>
 
-                  <p className="text-base text-gray-700 leading-relaxed">
+                  <p className="text-editorial text-gray-700 leading-editorial">
                     {latestStory.metadata.description}
                   </p>
 
@@ -276,11 +280,11 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 py-32 md:py-48 border-t border-gray-100">
         <div className="max-w-2xl mx-auto text-center px-0 animate-fade-in">
           <blockquote className="
-            text-xl md:text-3xl italic
-            leading-relaxed
+            text-xl md:text-2xl lg:text-3xl font-serif italic
+            leading-editorial
             text-gray-700
-            mb-12 md:mb-16 tracking-tight
-           
+            mb-12 md:mb-16 tracking-wide
+
           ">
             &ldquo;{t.home.quote}&rdquo;
           </blockquote>
