@@ -14,7 +14,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata = {
 	title: "FILMRICK",
-	description: "Film photography from Mexico City",
+	description: "Fotografía analógica desde Ciudad de México",
 };
 
 export default function RootLayout({

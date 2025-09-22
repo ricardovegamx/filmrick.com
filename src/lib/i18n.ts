@@ -78,6 +78,9 @@ export interface Translations {
     portraitPhoto: string
     cameraPhoto: string
     gallery: string
+    authorName: string
+    location: string
+    filmPhotographerAlt: string
   }
 }
 
@@ -159,7 +162,10 @@ export const translations: Record<Language, Translations> = {
       featuredImage: 'Imagen Destacada',
       portraitPhoto: 'Foto de Retrato',
       cameraPhoto: 'Foto de Cámara',
-      gallery: 'Galería'
+      gallery: 'Galería',
+      authorName: 'Rick Vega',
+      location: 'Ciudad de México',
+      filmPhotographerAlt: 'Rick Vega - Fotógrafo Analógico'
     }
   },
   en: {
@@ -239,7 +245,10 @@ export const translations: Record<Language, Translations> = {
       featuredImage: 'Featured Image',
       portraitPhoto: 'Portrait Photo',
       cameraPhoto: 'Camera Photo',
-      gallery: 'Gallery'
+      gallery: 'Gallery',
+      authorName: 'Rick Vega',
+      location: 'Mexico City',
+      filmPhotographerAlt: 'Rick Vega - Film Photographer'
     }
   }
 }

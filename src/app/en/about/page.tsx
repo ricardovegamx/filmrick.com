@@ -1,4 +1,5 @@
 import { getPostBySlug } from '@/lib/mdx'
+import { getTranslations } from '@/lib/i18n'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Gallery, GalleryImage } from '@/components/Gallery'
 import { Quote } from '@/components/Quote'
@@ -12,6 +13,7 @@ const components = {
 
 export default function About() {
   const bio = getPostBySlug('about', 'bio', 'en')
+  const t = getTranslations('en')
 
   if (!bio) {
     return (
@@ -24,7 +26,7 @@ export default function About() {
             <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
           </div>
           <p className="text-gray-600 text-lg leading-relaxed text-center max-w-2xl mx-auto">
-            Film photographer based in Mexico City, exploring the poetry between moments through analog photography
+            {t.about.description}
           </p>
         </div>
       </main>
@@ -44,7 +46,7 @@ export default function About() {
           {/* Portrait placeholder */}
           <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto mb-12 rounded-full bg-gray-100 border border-gray-200">
             <div className="absolute inset-0 flex items-center justify-center rounded-full">
-              <span className="text-gray-400 text-sm uppercase tracking-ultra-wide">Portrait Photo</span>
+              <span className="text-gray-400 text-sm uppercase tracking-ultra-wide">{t.common.portraitPhoto}</span>
             </div>
           </div>
           

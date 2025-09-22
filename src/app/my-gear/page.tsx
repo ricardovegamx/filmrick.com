@@ -1,15 +1,18 @@
+import { getTranslations } from '@/lib/i18n'
+
 export default function MyGear() {
+  const t = getTranslations('es')
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="py-24 md:py-32 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-8 tracking-tight">
-            Mi Equipo
+            {t.myGear.title}
           </h1>
           <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
           <p className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-            Las cámaras, lentes y herramientas que me ayudan a capturar la poesía de los momentos cotidianos en película.
+            {t.myGear.description}
           </p>
         </div>
       </section>
@@ -21,7 +24,7 @@ export default function MyGear() {
             
             {/* Cameras Section */}
             <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-gray-800 tracking-ultra-wide">Cámaras</h2>
+              <h2 className="text-3xl font-bold text-gray-800 tracking-ultra-wide">{t.myGear.cameras}</h2>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Main Camera */}

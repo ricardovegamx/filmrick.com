@@ -66,9 +66,9 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
           {/* Byline */}
           <div className="text-sm text-gray-600">
-            <span className="font-bold">Rick Vega</span>
+            <span className="font-bold">{t.common.authorName}</span>
             <span className="mx-2 text-gray-400">•</span>
-            <span>Mexico City</span>
+            <span>{t.common.location}</span>
           </div>
         </header>
 

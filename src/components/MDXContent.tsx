@@ -1,7 +1,10 @@
+'use client'
+
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Post } from '@/lib/mdx'
 import { Gallery, GalleryImage, FeaturedGalleryImage } from '@/components/Gallery'
 import { Quote } from '@/components/Quote'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 interface MDXContentProps {
   post: Post
@@ -15,6 +18,8 @@ const components = {
 }
 
 export function MDXContent({ post }: MDXContentProps) {
+  const { t } = useLanguage()
+
   return (
     <article className="max-w-none">
       <header className="mb-16 md:mb-20">
@@ -47,9 +52,9 @@ export function MDXContent({ post }: MDXContentProps) {
 
         {/* Byline */}
         <div className="text-sm text-gray-600">
-          <span className="font-bold">Rick Vega</span>
+          <span className="font-bold">{t.common.authorName}</span>
           <span className="mx-2 text-gray-400">•</span>
-          <span>Mexico City</span>
+          <span>{t.common.location}</span>
         </div>
       </header>
       <div className="

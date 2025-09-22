@@ -31,7 +31,7 @@ export default function Home() {
                   {/* Rick's Portrait */}
                   <img
                     src="/images/rick.jpg"
-                    alt="Rick Vega - Film Photographer"
+                    alt={t.common.filmPhotographerAlt}
                     className="absolute inset-0 w-full h-full object-cover grayscale"
                   />
 
@@ -78,9 +78,9 @@ export default function Home() {
               {/* Magazine-style byline */}
               <div className="pt-4">
                 <div className="text-sm text-gray-600">
-                  <span className="font-bold">Rick Vega</span>
+                  <span className="font-bold">{t.common.authorName}</span>
                   <span className="mx-2 text-gray-400">•</span>
-                  <span>Mexico City</span>
+                  <span>{t.common.location}</span>
                 </div>
               </div>
 
