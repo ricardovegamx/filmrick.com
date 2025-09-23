@@ -2,6 +2,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Post } from '@/lib/mdx'
 import { Gallery, GalleryImage, FeaturedGalleryImage } from '@/components/Gallery'
 import { Quote } from '@/components/Quote'
+import { CloudinaryImage } from '@/components/CloudinaryImage'
 import { Translations } from '@/lib/i18n'
 
 interface MDXContentProps {
@@ -14,6 +15,15 @@ const components = {
   GalleryImage,
   FeaturedGalleryImage,
   Quote,
+  img: (props: any) => (
+    <CloudinaryImage
+      {...props}
+      width={1200}
+      height={800}
+      quality="best"
+      className="w-full h-auto my-8"
+    />
+  ),
 }
 
 export function MDXContent({ post, t }: MDXContentProps) {
