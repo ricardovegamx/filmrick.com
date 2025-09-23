@@ -157,7 +157,7 @@ export default function Home() {
                   overflow-hidden
                 ">
                   {/* Gallery cover image */}
-                  <CldImage
+                  <CloudinaryImage
                     src={`filmrick/galleries/${gallery.metadata.slug}`}
                     alt={gallery.metadata.title}
                     fill
@@ -221,7 +221,7 @@ export default function Home() {
 
                 {/* Story Image */}
                 <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
-                  <CldImage
+                  <CloudinaryImage
                     src="filmrick/stories/1/hero"
                     alt={latestStory.metadata.title}
                     fill
