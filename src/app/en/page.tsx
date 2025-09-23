@@ -145,7 +145,7 @@ export default function Home() {
             >
               <Link href={getLocalizedUrl(`/galleries/${gallery.metadata.slug}`)}>
                 <div className="
-                  relative aspect-[4/5]
+                  relative aspect-[3/2]
                   bg-gray-50
                   border border-gray-100
                   transition-all duration-500 ease-out
@@ -154,44 +154,29 @@ export default function Home() {
                   hover:transform hover:-translate-y-1
                   overflow-hidden
                 ">
-                  {/* Gallery placeholder image */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center space-y-2">
-                        <div className="w-12 h-12 mx-auto border border-gray-300 rounded flex items-center justify-center bg-white">
-                          <span className="text-gray-400 text-lg">📷</span>
-                        </div>
-                        <div className="text-xs uppercase tracking-ultra-wide text-gray-400">
-                          {gallery.metadata.title}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  {/* Gallery cover image */}
+                  <Image
+                    src={`/images/galleries/${gallery.metadata.slug}.jpg`}
+                    alt={gallery.metadata.title}
+                    fill
+                    quality={95}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover grayscale"
+                  />
 
-                  {/* Hover overlay */}
-                  <div className="
-                    absolute inset-0
-                    bg-gradient-to-t from-black/30 via-transparent to-transparent
-                    opacity-0 transition-opacity duration-300
-                    group-hover:opacity-100
-                  " />
+                </div>
 
-                  {/* Gallery info overlay */}
-                  <div className="
-                    absolute bottom-0 left-0 right-0 p-6
-                    bg-gradient-to-t from-black/60 to-transparent
-                    text-white
-                    transform translate-y-full
-                    group-hover:translate-y-0
-                    transition-transform duration-300
-                  ">
-                    <h3 className="text-lg font-bold mb-1">
-                      {gallery.metadata.title}
-                    </h3>
-                    <p className="text-sm opacity-90 line-clamp-2">
+                {/* Gallery info below */}
+                <div className="space-y-3 mt-6">
+                  <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 tracking-wide">
+                    {gallery.metadata.title}
+                  </h2>
+
+                  {gallery.metadata.description && (
+                    <p className="text-sm text-gray-500 leading-relaxed">
                       {gallery.metadata.description}
                     </p>
-                  </div>
+                  )}
                 </div>
               </Link>
             </article>

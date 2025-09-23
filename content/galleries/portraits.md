@@ -1,5 +1,5 @@
 ---
-title: "Portraits"
+title: "Urban Portraits"
 description: "Intimate portraits captured on film - exploring human connection and emotion through analog photography"
 date: "2025-03-10"
 ---
