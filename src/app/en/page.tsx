@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { CloudinaryImage } from '@/components/CloudinaryImage'
 import { getAllPosts } from '@/lib/mdx'
 import { getTranslations } from '@/lib/i18n'
 
@@ -30,11 +30,13 @@ export default function Home() {
                 <div className="relative aspect-[3/4] bg-gray-50 overflow-hidden">
 
                   {/* Rick's Portrait */}
-                  <Image
-                    src="/images/rick.jpg"
+                  <CloudinaryImage
+                    src="filmrick/rick"
                     alt={t.common.filmPhotographerAlt}
                     fill
                     priority
+                    quality="best"
+                    sizes="100vw"
                     className="object-cover grayscale"
                   />
 
@@ -155,11 +157,11 @@ export default function Home() {
                   overflow-hidden
                 ">
                   {/* Gallery cover image */}
-                  <Image
-                    src={`/images/galleries/${gallery.metadata.slug}.jpg`}
+                  <CloudinaryImage
+                    src={`filmrick/galleries/${gallery.metadata.slug}`}
                     alt={gallery.metadata.title}
                     fill
-                    quality={95}
+                    quality="best"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover grayscale"
                   />
@@ -218,10 +220,11 @@ export default function Home() {
 
                 {/* Story Image */}
                 <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
-                  <Image
-                    src="/images/stories/1/hero.jpg"
+                  <CloudinaryImage
+                    src="filmrick/stories/1/hero"
                     alt={latestStory.metadata.title}
                     fill
+                    quality="best"
                     className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
