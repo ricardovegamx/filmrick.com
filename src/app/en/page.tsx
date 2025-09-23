@@ -168,12 +168,12 @@ export default function Home() {
 
                 {/* Gallery info below */}
                 <div className="space-y-3 mt-6">
-                  <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 tracking-wide">
+                  <h2 className="text-xl md:text-2xl font-serif font-normal text-gray-900 tracking-tight leading-snug">
                     {gallery.metadata.title}
                   </h2>
 
                   {gallery.metadata.description && (
-                    <p className="text-sm text-gray-500 leading-relaxed">
+                    <p className="text-base text-gray-600 leading-relaxed tracking-normal">
                       {gallery.metadata.description}
                     </p>
                   )}
