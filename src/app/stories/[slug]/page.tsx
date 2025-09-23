@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { getPostBySlug, getPostSlugs } from '@/lib/mdx'
 import { MDXContent } from '@/components/MDXContent'
 import { generateMetadata as generateSEOMetadata, generateArticleStructuredData } from '@/lib/seo'
+import { getTranslations } from '@/lib/i18n'
 
 interface StoryPageProps {
   params: Promise<{
@@ -33,6 +34,7 @@ export async function generateMetadata({ params }: StoryPageProps) {
 export default async function StoryPage({ params }: StoryPageProps) {
   const { slug } = await params
   const post = getPostBySlug('stories', slug)
+  const t = getTranslations('es')
 
   if (!post) {
     notFound()
@@ -54,7 +56,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
         }}
       />
       <div className="max-w-5xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 py-16">
-        <MDXContent post={post} />
+        <MDXContent post={post} t={t} />
       </div>
     </main>
   )

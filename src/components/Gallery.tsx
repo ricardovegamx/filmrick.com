@@ -1,9 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 import { ReactNode, useState, useEffect, Children, cloneElement, isValidElement, createContext, useContext } from 'react'
 import { responsiveImageSizes, shouldLoadWithPriority } from '@/lib/image-utils'
 import { ImageModal } from './ImageModal'
+import { CloudinaryImage } from '@/components/CloudinaryImage'
 
 interface GalleryProps {
   children: ReactNode
@@ -196,19 +196,18 @@ export function GalleryImage({
           mb-4
         `}
       >
-        <Image
+        <CloudinaryImage
           src={src}
           alt={alt}
           fill
           priority={shouldUsePriority}
-          loading={shouldUsePriority ? 'eager' : 'lazy'}
           className={`
             object-cover transition-all duration-700 ease-[var(--ease-in-out-circ)]
             ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}
             ${isHovered ? 'scale-110' : 'scale-100'}
           `}
           sizes={sizes}
-          quality={85}
+          quality="best"
           onLoad={() => setIsLoaded(true)}
         />
         
@@ -281,7 +280,7 @@ export function FeaturedGalleryImage({
           mb-6
         "
       >
-        <Image
+        <CloudinaryImage
           src={src}
           alt={alt}
           fill
@@ -292,7 +291,7 @@ export function FeaturedGalleryImage({
             group-hover:scale-105
           `}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-          quality={90}
+          quality="best"
           onLoad={() => setIsLoaded(true)}
         />
         

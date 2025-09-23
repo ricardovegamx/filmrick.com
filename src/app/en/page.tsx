@@ -127,77 +127,95 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Work Preview */}
+      {/* Featured Work Preview - Premium Editorial Grid */}
       <section className="max-w-7xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 py-32 md:py-40 border-t border-gray-100">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12 tracking-[-0.01em]">
+        {/* Section Header */}
+        <div className="mb-24 md:mb-32">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-tight tracking-headline mb-6">
             {t.home.featuredWork}
           </h2>
-          <p className="text-lg text-gray-700 max-w-lg mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed">
             {t.home.featuredDescription}
           </p>
         </div>
 
-        {/* Featured Galleries */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
-          {galleries.slice(0, 6).map((gallery) => (
-            <article
-              key={gallery.metadata.slug}
-              className="group"
-            >
-              <Link href={getLocalizedUrl(`/galleries/${gallery.metadata.slug}`)}>
-                <div className="
-                  relative aspect-[3/2]
-                  bg-gray-50
-                  border border-gray-100
-                  transition-all duration-500 ease-out
-                  hover:border-gray-200
-                  hover:shadow-xl hover:shadow-black/5
-                  hover:transform hover:-translate-y-1
-                  overflow-hidden
-                ">
-                  {/* Gallery cover image */}
-                  <CloudinaryImage
-                    src={`filmrick/galleries/${gallery.metadata.slug}`}
-                    alt={gallery.metadata.title}
-                    fill
-                    quality="best"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover grayscale"
-                  />
+        {/* Premium Asymmetric Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12 auto-rows-[280px]">
+          {galleries.slice(0, 6).map((gallery, index) => {
+            const layoutClasses = [
+              'lg:col-span-7 lg:row-span-2',
+              'lg:col-span-5 lg:row-span-1',
+              'lg:col-span-5 lg:row-span-1',
+              'lg:col-span-4 lg:row-span-2',
+              'lg:col-span-4 lg:row-span-1',
+              'lg:col-span-4 lg:row-span-1',
+            ][index] || 'lg:col-span-4'
 
-                </div>
+            return (
+              <article
+                key={gallery.metadata.slug}
+                className={`group relative ${layoutClasses}`}
+                style={{
+                  animation: `galleryReveal 800ms cubic-bezier(0.4, 0, 0.2, 1) ${index * 100}ms both`
+                }}
+              >
+                <Link href={getLocalizedUrl(`/galleries/${gallery.metadata.slug}`)} className="flex flex-col h-full">
+                  <div className="relative flex-1 bg-white p-3 md:p-4 shadow-sm">
 
-                {/* Gallery info below */}
-                <div className="space-y-3 mt-6">
-                  <h2 className="text-xl md:text-2xl font-serif font-normal text-gray-900 tracking-tight leading-snug">
-                    {gallery.metadata.title}
-                  </h2>
+                    <div className="absolute top-6 left-6 z-20 text-[10px] font-mono tracking-wider text-white mix-blend-difference">
+                      {String(index + 1).padStart(2, '0')}A
+                    </div>
 
-                  {gallery.metadata.description && (
-                    <p className="text-base text-gray-600 leading-relaxed tracking-normal">
-                      {gallery.metadata.description}
-                    </p>
-                  )}
-                </div>
-              </Link>
-            </article>
-          ))}
+                    <div className="relative h-full overflow-hidden border border-gray-200/50 bg-gray-50">
+                      <div className="relative h-full">
+                        <CloudinaryImage
+                          src="filmrick/galleries/portraits"
+                          alt={gallery.metadata.title}
+                          fill
+                          quality="best"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className="object-cover grayscale"
+                        />
+
+                        <div
+                          className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
+                          style={{
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`
+                          }}
+                        />
+
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                      </div>
+
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <div className="space-y-3">
+                          <h3 className="text-xl md:text-2xl font-serif font-normal text-white leading-tight tracking-tight">
+                            {gallery.metadata.title}
+                          </h3>
+                          <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.15em] text-white/80 font-bold">
+                            <span>35MM</span>
+                            <span className="w-1 h-1 rounded-full bg-white/50"></span>
+                            <span>TRI-X 400</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </article>
+            )
+          })}
         </div>
 
-        <div className="text-center mt-20 md:mt-24 animate-fade-in">
-          <Link 
+        <div className="mt-24 md:mt-32 flex justify-center">
+          <Link
             href={getLocalizedUrl('/galleries')}
-            className="
-              text-sm font-bold uppercase tracking-ultra-wide text-gray-600
-              hover:text-black
-              transition-colors duration-200
-              border-b border-transparent
-              hover:border-gray-300
-              pb-1
-            "
+            className="inline-flex items-center gap-4 px-8 py-4 border border-black bg-white text-black"
           >
-            {t.home.viewAllGalleries}
+            <span className="text-xs font-bold uppercase tracking-[0.2em]">
+              {t.home.viewAllGalleries}
+            </span>
+            <span>→</span>
           </Link>
         </div>
       </section>

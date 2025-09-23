@@ -1,13 +1,12 @@
-'use client'
-
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Post } from '@/lib/mdx'
 import { Gallery, GalleryImage, FeaturedGalleryImage } from '@/components/Gallery'
 import { Quote } from '@/components/Quote'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { Translations } from '@/lib/i18n'
 
 interface MDXContentProps {
   post: Post
+  t: Translations
 }
 
 const components = {
@@ -17,8 +16,7 @@ const components = {
   Quote,
 }
 
-export function MDXContent({ post }: MDXContentProps) {
-  const { t } = useLanguage()
+export function MDXContent({ post, t }: MDXContentProps) {
 
   return (
     <article className="max-w-none">
