@@ -169,11 +169,18 @@ export default function Home() {
                     <div className="relative h-full overflow-hidden border border-gray-200/50 bg-gray-50">
                       <div className="relative h-full">
                         <CloudinaryImage
-                          src={gallery.metadata.cover ?
-                            gallery.metadata.cover.replace('https://res.cloudinary.com/ds7wf5djl/image/upload/', '')
-                                                   .replace(/^v\d+\//, '')
-                                                   .replace(/\.(jpg|jpeg|png|webp)$/i, '')
-                            : "filmrick/galleries/portraits"}
+                          src={(() => {
+                            if (gallery.metadata.cover && gallery.metadata.cover.includes('res.cloudinary.com')) {
+                              // Extract public ID from full Cloudinary URL
+                              let publicId = gallery.metadata.cover.replace('https://res.cloudinary.com/ds7wf5djl/image/upload/', '')
+                              // Remove version number (e.g., v1758776254/)
+                              publicId = publicId.replace(/^v\d+\//, '')
+                              // Remove file extension
+                              publicId = publicId.replace(/\.(jpg|jpeg|png|webp)$/i, '')
+                              return publicId
+                            }
+                            return gallery.metadata.cover || "filmrick/galleries/portraits"
+                          })()}
                           alt={gallery.metadata.title}
                           fill
                           quality="best"

@@ -181,11 +181,18 @@ export function ImageModal({
         {/* Image container */}
         <div className="relative max-w-full max-h-[80vh] mb-8">
           <CloudinaryImage
-            src={src.includes('res.cloudinary.com') ?
-              src.replace('https://res.cloudinary.com/ds7wf5djl/image/upload/', '')
-                 .replace(/^v\d+\//, '')
-                 .replace(/\.(jpg|jpeg|png|webp)$/i, '')
-              : src}
+            src={(() => {
+              if (src.includes('res.cloudinary.com')) {
+                // Extract public ID from full Cloudinary URL
+                let publicId = src.replace('https://res.cloudinary.com/ds7wf5djl/image/upload/', '')
+                // Remove version number (e.g., v1758776254/)
+                publicId = publicId.replace(/^v\d+\//, '')
+                // Remove file extension
+                publicId = publicId.replace(/\.(jpg|jpeg|png|webp)$/i, '')
+                return publicId
+              }
+              return src
+            })()}
             alt={alt}
             width={1200}
             height={800}
