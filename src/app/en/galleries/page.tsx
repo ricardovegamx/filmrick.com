@@ -11,11 +11,11 @@ export default function Galleries() {
       {/* Hero Section */}
       <section className="py-24 md:py-32 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-8 tracking-[-0.02em]">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-800 mb-8 leading-tight tracking-headline">
             {t.galleries.title}
           </h1>
           <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
-          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-editorial text-gray-700 leading-editorial max-w-3xl mx-auto">
             {t.galleries.description}
           </p>
         </div>
@@ -32,7 +32,7 @@ export default function Galleries() {
                     {/* Featured Image Placeholder */}
                     <div className="relative aspect-[4/5] mb-6 bg-gray-100 border border-gray-200 overflow-hidden group-hover:shadow-lg transition-all duration-300">
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-gray-400 text-sm uppercase tracking-ultra-wide">{t.common.featuredImage}</span>
+                        <span className="text-gray-400 text-sm uppercase tracking-ultra-wide font-bold">{t.common.featuredImage}</span>
                       </div>
                       {/* Subtle overlay on hover */}
                       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
@@ -40,12 +40,12 @@ export default function Galleries() {
                     
                     {/* Gallery Info */}
                     <div className="space-y-3">
-                      <h2 className="text-2xl font-bold text-gray-800 group-hover:text-gray-600 transition-colors">
+                      <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 group-hover:text-gray-600 transition-colors tracking-wide">
                         {gallery.metadata.title}
                       </h2>
-                      
+
                       {gallery.metadata.description && (
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-editorial text-gray-600 leading-editorial">
                           {gallery.metadata.description}
                         </p>
                       )}
@@ -57,8 +57,8 @@ export default function Galleries() {
             </div>
           ) : (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-600 mb-8">{t.galleries.noGalleries}</p>
-              <p className="text-gray-500">{t.galleries.checkBack}</p>
+              <p className="text-xl font-serif text-gray-600 mb-8">{t.galleries.noGalleries}</p>
+              <p className="text-editorial text-gray-500">{t.galleries.checkBack}</p>
             </div>
           )}
         </div>
