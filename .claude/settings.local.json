@@ -38,7 +38,10 @@
       "Bash(awk:*)",
       "Bash(/bashes)",
       "Bash(npm start)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Read(//tmp/**)",
+      "Bash(do sed -i '' 's|/images/stories/|filmrick/stories/|g' \"$file\")",
+      "Bash(npx dotenv-cli:*)"
     ],
     "deny": [],
     "ask": []
