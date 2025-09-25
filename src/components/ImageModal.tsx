@@ -181,7 +181,11 @@ export function ImageModal({
         {/* Image container */}
         <div className="relative max-w-full max-h-[80vh] mb-8">
           <CloudinaryImage
-            src={src.includes('res.cloudinary.com') ? src.replace('https://res.cloudinary.com/ds7wf5djl/image/upload/', '').replace(/\/v\d+\//, '/').replace(/\.[^.]+$/, '') : src}
+            src={src.includes('res.cloudinary.com') ?
+              src.replace('https://res.cloudinary.com/ds7wf5djl/image/upload/', '')
+                 .replace(/^v\d+\//, '')
+                 .replace(/\.(jpg|jpeg|png|webp)$/i, '')
+              : src}
             alt={alt}
             width={1200}
             height={800}
