@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
+import { CloudinaryImage } from '@/components/CloudinaryImage'
 
 interface ImageModalProps {
   src: string
@@ -180,8 +180,8 @@ export function ImageModal({
       >
         {/* Image container */}
         <div className="relative max-w-full max-h-[80vh] mb-8">
-          <Image
-            src={src}
+          <CloudinaryImage
+            src={src.includes('res.cloudinary.com') ? src.replace('https://res.cloudinary.com/ds7wf5djl/image/upload/', '').replace(/\/v\d+\//, '/').replace(/\.[^.]+$/, '') : src}
             alt={alt}
             width={1200}
             height={800}
@@ -191,7 +191,7 @@ export function ImageModal({
               transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]
               ${isLoaded && !isTransitioning ? 'opacity-100 scale-100' : 'opacity-0 scale-98'}
             `}
-            quality={95}
+            quality="best"
             priority
             onLoad={() => setIsLoaded(true)}
           />

@@ -169,7 +169,7 @@ export default function Home() {
                     <div className="relative h-full overflow-hidden border border-gray-200/50 bg-gray-50">
                       <div className="relative h-full">
                         <CloudinaryImage
-                          src="filmrick/galleries/portraits"
+                          src={gallery.metadata.cover ? gallery.metadata.cover.replace('https://res.cloudinary.com/ds7wf5djl/image/upload/', '').replace(/\/v\d+\//, '/').replace(/\.[^.]+$/, '') : "filmrick/galleries/portraits"}
                           alt={gallery.metadata.title}
                           fill
                           quality="best"

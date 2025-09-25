@@ -9,6 +9,7 @@ export interface PostMetadata {
   description?: string
   date?: string
   tags?: string[]
+  cover?: string
   slug: string
 }
 
