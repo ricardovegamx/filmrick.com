@@ -179,7 +179,7 @@ export function ImageModal({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Image container */}
-        <div className="relative max-w-full max-h-[80vh] mb-8">
+        <div className="relative flex items-center justify-center max-w-full max-h-[85vh] mb-8">
           <CloudinaryImage
             src={(() => {
               if (src.includes('res.cloudinary.com')) {
@@ -194,15 +194,16 @@ export function ImageModal({
               return src
             })()}
             alt={alt}
-            width={1200}
-            height={800}
+            width={0}
+            height={0}
+            sizes="100vw"
             className={`
-              max-w-full max-h-full w-auto h-auto
+              w-auto max-w-full h-auto max-h-[85vh]
               object-contain
               transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]
               ${isLoaded && !isTransitioning ? 'opacity-100 scale-100' : 'opacity-0 scale-98'}
             `}
-            quality="best"
+            quality="auto:best"
             priority
             onLoad={() => setIsLoaded(true)}
           />
