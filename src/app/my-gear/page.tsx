@@ -1,7 +1,7 @@
 import { getTranslations } from '@/lib/i18n'
 
 export default function MyGear() {
-  const t = getTranslations('es')
+  const t = getTranslations()
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}

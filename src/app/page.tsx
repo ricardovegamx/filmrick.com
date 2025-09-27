@@ -4,18 +4,13 @@ import { getAllPosts } from '@/lib/mdx'
 import { getTranslations } from '@/lib/i18n'
 
 export default function Home() {
-  // Get Spanish content (default language)
+  // Get Spanish content
   const galleries = getAllPosts('galleries')
   const stories = getAllPosts('stories')
   const latestStory = stories[0] // Get the most recent story
 
   // Get Spanish translations
-  const t = getTranslations('es')
-
-  // Helper function to get localized URL (Spanish = root)
-  const getLocalizedUrl = (path: string) => {
-    return path // Spanish is at root level
-  }
+  const t = getTranslations()
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section - Magazine Editorial */}
@@ -93,7 +88,7 @@ export default function Home() {
               <div className="pt-8 space-y-6">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
-                    href={getLocalizedUrl('/galleries')}
+                    href="/galleries"
                     className="
                       inline-flex items-center px-8 py-3
                       bg-black text-white
@@ -107,7 +102,7 @@ export default function Home() {
                   </Link>
 
                   <Link
-                    href={getLocalizedUrl('/stories')}
+                    href="/stories"
                     className="
                       inline-flex items-center px-8 py-3
                       bg-white text-black border border-black
@@ -159,7 +154,7 @@ export default function Home() {
                   animation: `galleryReveal 800ms cubic-bezier(0.4, 0, 0.2, 1) ${index * 100}ms both`
                 }}
               >
-                <Link href={getLocalizedUrl(`/galleries/${gallery.metadata.slug}`)} className="flex flex-col h-full">
+                <Link href={`/galleries/${gallery.metadata.slug}`} className="flex flex-col h-full">
                   <div className="relative flex-1 bg-white p-3 md:p-4 shadow-sm">
 
                     <div className="absolute top-6 left-6 z-20 text-[10px] font-mono tracking-wider text-white mix-blend-difference">
@@ -220,7 +215,7 @@ export default function Home() {
 
         <div className="mt-24 md:mt-32 flex justify-center">
           <Link
-            href={getLocalizedUrl('/galleries')}
+            href="/galleries"
             className="inline-flex items-center gap-4 px-8 py-4 border border-black bg-white text-black"
           >
             <span className="text-xs font-bold uppercase tracking-[0.2em]">
@@ -244,7 +239,7 @@ export default function Home() {
           </div>
 
           <article className="max-w-5xl mx-auto">
-            <Link href={getLocalizedUrl(`/stories/${latestStory.metadata.slug}`)}>
+            <Link href={`/stories/${latestStory.metadata.slug}`}>
               <div className="group grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
                 {/* Story Image */}

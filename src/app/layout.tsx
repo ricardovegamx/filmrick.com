@@ -1,7 +1,6 @@
 import "./globals.css";
 import { Merriweather, Crimson_Text } from "next/font/google";
 import { generatePhotographyPortfolioStructuredData } from "@/lib/seo";
-import { LanguageProvider } from "@/contexts/LanguageContext";
 import { SimpleNavigation } from "@/components/SimpleNavigation";
 import { Footer } from "@/components/Footer";
 
@@ -47,11 +46,9 @@ export default function RootLayout({
 				className={`min-h-screen bg-white antialiased ${merriweather.variable} ${crimsonText.variable}`}
 				suppressHydrationWarning={true}
 			>
-				<LanguageProvider>
-					<SimpleNavigation />
-					<main className="pt-28">{children}</main>
-					<Footer />
-				</LanguageProvider>
+				<SimpleNavigation />
+				<main className="pt-28">{children}</main>
+				<Footer />
 			</body>
 		</html>
 	);

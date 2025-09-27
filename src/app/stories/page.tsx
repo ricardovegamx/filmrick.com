@@ -6,7 +6,7 @@ import { Pagination } from '@/components/Pagination'
 
 export default function Stories() {
   const { posts: stories, totalPages, currentPage, hasNextPage, hasPreviousPage } = getPaginatedPosts('stories', 1, 6) // Default to Spanish, page 1, 6 posts
-  const t = getTranslations('es')
+  const t = getTranslations()
 
   return (
     <main className="min-h-screen bg-white">

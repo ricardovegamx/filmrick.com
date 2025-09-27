@@ -13,7 +13,7 @@ const components = {
 
 export default function About() {
   const bio = getPostBySlug('about', 'bio')
-  const t = getTranslations('es')
+  const t = getTranslations()
 
   if (!bio) {
     return (

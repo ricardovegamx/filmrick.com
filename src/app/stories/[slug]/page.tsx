@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: StoryPageProps) {
 export default async function StoryPage({ params }: StoryPageProps) {
   const { slug } = await params
   const post = getPostBySlug('stories', slug)
-  const t = getTranslations('es')
+  const t = getTranslations()
 
   if (!post) {
     notFound()

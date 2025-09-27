@@ -41,7 +41,8 @@
       "Bash(pkill:*)",
       "Read(//tmp/**)",
       "Bash(do sed -i '' 's|/images/stories/|filmrick/stories/|g' \"$file\")",
-      "Bash(npx dotenv-cli:*)"
+      "Bash(npx dotenv-cli:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

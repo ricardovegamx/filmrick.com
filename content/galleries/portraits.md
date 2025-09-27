@@ -2,7 +2,6 @@
 title: "Gente en la Calle"
 description: "Momentos auténticos e historias capturadas en el paisaje urbano de Ciudad de México - donde la vida se desarrolla naturalmente"
 date: "2025-03-10"
-cover: "https://res.cloudinary.com/ds7wf5djl/image/upload/v1758776254/filmrick/galleries/people-on-the-street/people-street-01.jpg"
 ---
 
 Una colección de retratos callejeros que muestran la vida vibrante de Ciudad de México, cada cuadro contando una historia de la gente que hace que esta ciudad esté viva.

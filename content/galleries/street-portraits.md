@@ -1,5 +1,5 @@
 ---
-title: "Street Portraits" 
+title: "Street Portraits"
 description: "Intimate moments captured in public spaces"
 date: "2024-02-10"
 tags: ["portraits", "street", "people"]
