@@ -72,7 +72,7 @@ export default async function StoriesPage({ params }: StoriesPageProps) {
                       )}
 
                       {story.metadata.date && (
-                        <time className="block text-sm text-gray-500 font-bold uppercase tracking-ultra-wide">
+                        <time className="block text-sm text-gray-500 font-bold uppercase tracking-[0.2em]">
                           {new Date(story.metadata.date).toLocaleDateString('en-US', {
                             year: 'numeric',
                             month: 'long',

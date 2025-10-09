@@ -46,7 +46,7 @@ export default function About() {
           {/* Portrait placeholder */}
           <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto mb-12 rounded-full bg-gray-100 border border-gray-200">
             <div className="absolute inset-0 flex items-center justify-center rounded-full">
-              <span className="text-gray-400 text-sm uppercase tracking-ultra-wide font-bold">{t.common.portraitPhoto}</span>
+              <span className="text-gray-400 text-sm uppercase tracking-[0.2em] font-bold">{t.common.portraitPhoto}</span>
             </div>
           </div>
           
@@ -96,7 +96,7 @@ export default function About() {
               className="
                 inline-block px-8 py-4 
                 bg-gray-800 text-white 
-                text-sm uppercase tracking-ultra-wide font-bold
+                text-sm uppercase tracking-[0.2em] font-bold
                 hover:bg-gray-700
                 transition-all duration-300 ease-out
                 border border-gray-800
@@ -110,7 +110,7 @@ export default function About() {
               className="
                 inline-block px-8 py-4 
                 bg-transparent text-gray-800 
-                text-sm uppercase tracking-ultra-wide font-bold
+                text-sm uppercase tracking-[0.2em] font-bold
                 hover:bg-gray-800 hover:text-white
                 transition-all duration-300 ease-out
                 border border-gray-800

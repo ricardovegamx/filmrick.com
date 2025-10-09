@@ -46,7 +46,7 @@ export default function Home() {
                 </div>
 
                 {/* Photo credit */}
-                <div className="absolute -bottom-8 right-0 text-xs text-gray-400 font-bold tracking-ultra-wide uppercase">
+                <div className="absolute -bottom-8 right-0 text-xs text-gray-400 font-bold tracking-[0.2em] uppercase">
                   35mm / Tri-X 400
                 </div>
               </div>
@@ -57,7 +57,7 @@ export default function Home() {
 
               {/* Magazine header */}
               <div className="space-y-4">
-                <div className="text-xs uppercase tracking-ultra-wide text-gray-500 font-bold">
+                <div className="text-xs uppercase tracking-[0.2em] text-gray-500 font-bold">
                   {t.home.tagline}
                 </div>
                 <div className="w-12 h-px bg-black"></div>
@@ -65,12 +65,12 @@ export default function Home() {
 
               {/* Magazine headline */}
               <div className="space-y-6">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-black leading-tight tracking-headline">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-black leading-tight tracking-tight">
                   {t.home.title}
                 </h1>
 
                 {/* Editorial subtitle */}
-                <p className="text-editorial text-gray-700 leading-editorial max-w-lg">
+                <p className="text-xl text-gray-700 leading-relaxed max-w-lg">
                   {t.home.description}
                 </p>
               </div>
@@ -126,7 +126,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 py-32 md:py-40 border-t border-gray-100">
         {/* Section Header */}
         <div className="mb-24 md:mb-32">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-tight tracking-headline mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-tight tracking-tight mb-6">
             {t.home.featuredWork}
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed">
@@ -230,10 +230,10 @@ export default function Home() {
       {latestStory && (
         <section className="max-w-7xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 py-24 md:py-32 border-t border-gray-100">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-6 leading-tight tracking-headline">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-6 leading-tight tracking-tight">
               {t.home.featuredStory}
             </h2>
-            <p className="text-editorial text-gray-600 leading-editorial">
+            <p className="text-xl text-gray-600 leading-relaxed">
               {t.home.latestFromBlog}
             </p>
           </div>
@@ -257,19 +257,19 @@ export default function Home() {
                 {/* Story Content */}
                 <div className="space-y-6">
                   <div className="space-y-4">
-                    <div className="text-xs uppercase tracking-ultra-wide text-gray-500 font-bold">
+                    <div className="text-xs uppercase tracking-[0.2em] text-gray-500 font-bold">
                       {latestStory.metadata.date && new Date(latestStory.metadata.date).toLocaleDateString('es-ES', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric'
                       })}
                     </div>
-                    <h3 className="text-xl md:text-2xl lg:text-3xl font-serif font-bold text-gray-900 leading-tight group-hover:text-gray-700 transition-colors tracking-headline">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-serif font-bold text-gray-900 leading-tight group-hover:text-gray-700 transition-colors tracking-tight">
                       {latestStory.metadata.title}
                     </h3>
                   </div>
 
-                  <p className="text-editorial text-gray-700 leading-editorial">
+                  <p className="text-xl text-gray-700 leading-relaxed">
                     {latestStory.metadata.description}
                   </p>
 
@@ -290,10 +290,10 @@ export default function Home() {
       {/* Philosophy Section */}
       <section className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 py-32 md:py-48 border-t border-gray-100">
         <div className="max-w-2xl mx-auto text-center px-0 animate-fade-in">
-          <blockquote className="text-xl md:text-2xl lg:text-3xl font-serif italic leading-editorial text-gray-700 mb-12 md:mb-16 tracking-wide">
+          <blockquote className="text-xl md:text-2xl lg:text-3xl font-serif italic leading-relaxed text-gray-700 mb-12 md:mb-16 tracking-wide">
             &ldquo;{t.home.quote}&rdquo;
           </blockquote>
-          <cite className="text-sm uppercase tracking-ultra-wide text-gray-500 not-italic font-bold">
+          <cite className="text-sm uppercase tracking-[0.2em] text-gray-500 not-italic font-bold">
             {t.home.quoteAuthor}
           </cite>
         </div>

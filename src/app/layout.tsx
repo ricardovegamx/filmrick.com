@@ -22,7 +22,7 @@ const crimsonText = Crimson_Text({
 
 export const metadata = {
 	title: "FILMRICK",
-	description: "Fotografía analógica desde Ciudad de México",
+	description: "Portfolio de fotografía en película - Explorando momentos auténticos a través del arte analógico",
 };
 
 export default function RootLayout({

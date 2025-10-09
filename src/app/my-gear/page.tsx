@@ -24,7 +24,7 @@ export default function MyGear() {
             
             {/* Cameras Section */}
             <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-gray-800 tracking-ultra-wide">{t.myGear.cameras}</h2>
+              <h2 className="text-3xl font-bold text-gray-800 tracking-[0.2em]">{t.myGear.cameras}</h2>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Main Camera */}
@@ -33,8 +33,8 @@ export default function MyGear() {
                     <span className="text-gray-400 text-sm font-bold">Leica IIIF</span>
                   </div>
                   <div className="space-y-1">
-                    <span className="text-xs uppercase tracking-ultra-wide text-gray-500 font-bold">Cámara Principal</span>
-                    <h3 className="text-lg font-bold text-gray-800 tracking-ultra-wide">Leica IIIF</h3>
+                    <span className="text-xs uppercase tracking-[0.2em] text-gray-500 font-bold">Cámara Principal</span>
+                    <h3 className="text-lg font-bold text-gray-800 tracking-[0.2em]">Leica IIIF</h3>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     La icónica telemétrica alemana de 35mm. Construcción impecable y ópticas legendarias para fotografía callejera clásica.
@@ -47,7 +47,7 @@ export default function MyGear() {
                     <span className="text-gray-400 text-sm font-bold">Olympus XA2</span>
                   </div>
                   <div className="space-y-1">
-                    <span className="text-xs uppercase tracking-ultra-wide text-gray-500">Point & Shoot</span>
+                    <span className="text-xs uppercase tracking-[0.2em] text-gray-500">Point & Shoot</span>
                     <h3 className="text-lg font-bold text-gray-800">Olympus XA2</h3>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -61,7 +61,7 @@ export default function MyGear() {
                     <span className="text-gray-400 text-sm">Yashica Mat LM</span>
                   </div>
                   <div className="space-y-1">
-                    <span className="text-xs uppercase tracking-ultra-wide text-gray-500">Medio Formato Cuadrado</span>
+                    <span className="text-xs uppercase tracking-[0.2em] text-gray-500">Medio Formato Cuadrado</span>
                     <h3 className="text-lg font-bold text-gray-800">Yashica Mat LM</h3>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -75,7 +75,7 @@ export default function MyGear() {
                     <span className="text-gray-400 text-sm">Agfa Billy I</span>
                   </div>
                   <div className="space-y-1">
-                    <span className="text-xs uppercase tracking-ultra-wide text-gray-500">Medio Formato Ancho</span>
+                    <span className="text-xs uppercase tracking-[0.2em] text-gray-500">Medio Formato Ancho</span>
                     <h3 className="text-lg font-bold text-gray-800">Agfa Billy I</h3>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -89,7 +89,7 @@ export default function MyGear() {
                     <span className="text-gray-400 text-sm">Nikon F3</span>
                   </div>
                   <div className="space-y-1">
-                    <span className="text-xs uppercase tracking-ultra-wide text-gray-500">SLR</span>
+                    <span className="text-xs uppercase tracking-[0.2em] text-gray-500">SLR</span>
                     <h3 className="text-lg font-bold text-gray-800">Nikon F3</h3>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -129,7 +129,7 @@ export default function MyGear() {
                 <div className="border-b border-gray-100 pb-6">
                   <div className="flex items-start justify-between mb-2">
                     <h3 className="text-lg font-bold text-gray-800">Kodak Tri-X 400</h3>
-                    <span className="text-xs uppercase tracking-ultra-wide text-gray-500">35mm B&W</span>
+                    <span className="text-xs uppercase tracking-[0.2em] text-gray-500">35mm B&W</span>
                   </div>
                   <p className="text-gray-600">La película icónica en blanco y negro. Grano clásico, latitud generosa y resultados consistentes desde 1954.</p>
                 </div>
@@ -137,7 +137,7 @@ export default function MyGear() {
                 <div className="border-b border-gray-100 pb-6">
                   <div className="flex items-start justify-between mb-2">
                     <h3 className="text-lg font-bold text-gray-800">Fuji Pro 400H</h3>
-                    <span className="text-xs uppercase tracking-ultra-wide text-gray-500">120 Color</span>
+                    <span className="text-xs uppercase tracking-[0.2em] text-gray-500">120 Color</span>
                   </div>
                   <p className="text-gray-600">Tonos de piel suaves y colores naturales. Perfecta para retratos en medio formato con luz natural.</p>
                 </div>
@@ -145,7 +145,7 @@ export default function MyGear() {
                 <div className="border-b border-gray-100 pb-6">
                   <div className="flex items-start justify-between mb-2">
                     <h3 className="text-lg font-bold text-gray-800">Ilford HP5 Plus</h3>
-                    <span className="text-xs uppercase tracking-ultra-wide text-gray-500">35mm B&W</span>
+                    <span className="text-xs uppercase tracking-[0.2em] text-gray-500">35mm B&W</span>
                   </div>
                   <p className="text-gray-600">Versátil y confiable para cualquier situación. Excelente para fotografía callejera y poca luz.</p>
                 </div>
@@ -153,7 +153,7 @@ export default function MyGear() {
                 <div className="border-b border-gray-100 pb-6">
                   <div className="flex items-start justify-between mb-2">
                     <h3 className="text-lg font-bold text-gray-800">Kodak Portra 400</h3>
-                    <span className="text-xs uppercase tracking-ultra-wide text-gray-500">35mm Color</span>
+                    <span className="text-xs uppercase tracking-[0.2em] text-gray-500">35mm Color</span>
                   </div>
                   <p className="text-gray-600">El estándar dorado para retratos en color. Tonos cálidos y naturaleza forgiving para diferentes condiciones de luz.</p>
                 </div>
@@ -161,7 +161,7 @@ export default function MyGear() {
                 <div className="border-b border-gray-100 pb-6">
                   <div className="flex items-start justify-between mb-2">
                     <h3 className="text-lg font-bold text-gray-800">Cinestill 800T</h3>
-                    <span className="text-xs uppercase tracking-ultra-wide text-gray-500">35mm Color</span>
+                    <span className="text-xs uppercase tracking-[0.2em] text-gray-500">35mm Color</span>
                   </div>
                   <p className="text-gray-600">Película cinematográfica adaptada para fotografía. Halos únicos y excelente rendimiento nocturno.</p>
                 </div>

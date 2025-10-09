@@ -42,7 +42,8 @@
       "Read(//tmp/**)",
       "Bash(do sed -i '' 's|/images/stories/|filmrick/stories/|g' \"$file\")",
       "Bash(npx dotenv-cli:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "WebFetch(domain:fontsource.org)"
     ],
     "deny": [],
     "ask": []

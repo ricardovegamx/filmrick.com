@@ -8,7 +8,7 @@ export const translations = {
     about: 'Acerca de'
   },
   home: {
-    tagline: 'Fotografía analógica desde Ciudad de México',
+    tagline: 'Explorando momentos auténticos en película',
     title: 'Aventuras en fotografía analógica',
     description: 'Explorando la poesía entre momentos a través de la fotografía analógica. Galerías íntimas, reseñas sinceras de cámaras, historias del cuarto oscuro y todo lo analógico — donde cada cuadro cuenta y la luz se encuentra con la emoción.',
     viewGalleries: 'Ver Galerías',
@@ -57,20 +57,20 @@ export const translations = {
   },
   about: {
     title: 'Acerca de FILMRICK',
-    description: 'Fotógrafo analógico radicado en Ciudad de México, explorando la poesía entre momentos a través de la fotografía analógica',
+    description: 'Fotógrafo especializado en película, explorando la poesía entre momentos a través del arte analógico',
     letsConnect: 'Conectemos',
-    connectDescription: 'Me encantaría escuchar de otros fotógrafos, colaboradores potenciales o cualquier persona interesada en el arte de la fotografía analógica.',
+    connectDescription: 'Me encantaría escuchar de otros fotógrafos, colaboradores potenciales o cualquier persona interesada en el arte de la película.',
     readOnSubstack: 'Leer en Substack',
     viewGalleries: 'Ver Galerías',
-    madeWith: 'Hecho con película y paciencia digital en Ciudad de México'
+    madeWith: 'Hecho con película y paciencia digital'
   },
   footer: {
     brand: 'FILMRICK',
-    brandDescription: 'Fotografía analógica desde Ciudad de México. Explorando la poesía entre momentos a través de la fotografía analógica.',
+    brandDescription: 'Capturando momentos auténticos en película. Explorando la poesía entre luz, sombra y emoción humana.',
     explore: 'Explorar',
     connect: 'Conectar',
     newsletter: 'Newsletter de Substack',
-    newsletterDescription: 'Historias sobre fotografía analógica, técnicas de cuarto oscuro y el arte de ver.',
+    newsletterDescription: 'Historias sobre el proceso analógico, técnicas de cuarto oscuro y el arte de ver.',
     copyright: 'Todos los derechos reservados.'
   },
   common: {

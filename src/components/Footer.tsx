@@ -20,7 +20,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div className="space-y-6">
-            <h3 className="text-sm font-serif font-medium uppercase tracking-wider text-gray-800">{t.footer.explore}</h3>
+            <h3 className="text-xs font-serif font-medium uppercase tracking-wider text-gray-800">{t.footer.explore}</h3>
             <nav className="space-y-3">
               <Link
                 href="/galleries"
@@ -51,7 +51,7 @@ export function Footer() {
 
           {/* Connect section */}
           <div className="space-y-6">
-            <h3 className="text-sm font-serif font-medium uppercase tracking-wider text-gray-800">{t.footer.connect}</h3>
+            <h3 className="text-xs font-serif font-medium uppercase tracking-wider text-gray-800">{t.footer.connect}</h3>
             <div className="space-y-3">
               <a
                 href="https://filmrick.substack.com"

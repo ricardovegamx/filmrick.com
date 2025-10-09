@@ -13,11 +13,11 @@ export default function Stories() {
       {/* Hero Section */}
       <section className="py-24 md:py-32 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-800 mb-8 leading-tight tracking-headline">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-800 mb-8 leading-tight tracking-tight">
             {t.stories.title}
           </h1>
           <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
-          <p className="text-editorial text-gray-700 leading-editorial max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
             {t.stories.description}
           </p>
         </div>
@@ -29,7 +29,7 @@ export default function Stories() {
           {stories.length === 0 ? (
             <div className="text-center py-24">
               <p className="text-xl font-serif text-gray-600 mb-4">{t.stories.noStories}</p>
-              <p className="text-editorial text-gray-500">{t.stories.checkBack}</p>
+              <p className="text-xl text-gray-500">{t.stories.checkBack}</p>
             </div>
           ) : (
             <div className="grid gap-16 md:gap-24">
@@ -52,7 +52,7 @@ export default function Stories() {
                       {/* Story Content */}
                       <div className="space-y-6">
                         <div className="space-y-4">
-                          <div className="text-xs uppercase tracking-ultra-wide text-gray-500 font-bold">
+                          <div className="text-xs uppercase tracking-[0.2em] text-gray-500 font-bold">
                             {story.metadata.date && new Date(story.metadata.date).toLocaleDateString('es-ES', {
                               year: 'numeric',
                               month: 'long',
@@ -64,7 +64,7 @@ export default function Stories() {
                           </h2>
                         </div>
 
-                        <p className="text-editorial text-gray-700 leading-editorial">
+                        <p className="text-xl text-gray-700 leading-relaxed">
                           {story.metadata.description}
                         </p>
 
