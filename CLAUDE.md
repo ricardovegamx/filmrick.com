@@ -46,9 +46,10 @@ npm run type-check # TypeScript checking
 - Images stored in public/images/
 
 ## Deployment
+- Platform: Netlify
 - Build: `npm run build`
-- Deploy: `surge dist/ filmrick.surge.sh`
-- Domain: filmrick.surge.sh
+- Auto-deploy: Push to `dev` branch triggers deployment
+- Configuration: netlify.toml
 
 ## Recent Fixes
 - ✅ IBM Plex Mono font inheritance resolved
