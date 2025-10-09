@@ -44,7 +44,7 @@ export function MDXContent({ post, t }: MDXContentProps) {
 
         {/* Magazine headline */}
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 leading-tight tracking-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-tight tracking-tight">
             {post.metadata.title}
           </h1>
 
@@ -67,14 +67,14 @@ export function MDXContent({ post, t }: MDXContentProps) {
       </header>
       <div className="
         max-w-[42rem]
-        text-xl
+        text-sm
         leading-relaxed text-gray-700
         [&>p]:mb-[1.5em]
         [&>p]:leading-relaxed
         [&>em]:italic
         [&>strong]:font-semibold
-        [&>h2]:text-xl [&>h2]:md:text-2xl [&>h2]:font-serif [&>h2]:font-bold [&>h2]:mt-[3em] [&>h2]:mb-[1.5em] [&>h2]:text-gray-800 [&>h2]:leading-tight [&>h2]:tracking-tight
-        [&>h3]:text-lg [&>h3]:md:text-xl [&>h3]:font-serif [&>h3]:font-bold [&>h3]:mt-[2.5em] [&>h3]:mb-[1em] [&>h3]:text-gray-800 [&>h3]:leading-tight [&>h3]:tracking-tight
+        [&>h2]:text-lg [&>h2]:md:text-xl [&>h2]:font-serif [&>h2]:font-bold [&>h2]:mt-[3em] [&>h2]:mb-[1.5em] [&>h2]:text-gray-800 [&>h2]:leading-tight [&>h2]:tracking-tight
+        [&>h3]:text-base [&>h3]:md:text-lg [&>h3]:font-serif [&>h3]:font-bold [&>h3]:mt-[2.5em] [&>h3]:mb-[1em] [&>h3]:text-gray-800 [&>h3]:leading-tight [&>h3]:tracking-tight
         [&>blockquote]:border-l-4 [&>blockquote]:border-gray-300 [&>blockquote]:pl-6 [&>blockquote]:font-serif [&>blockquote]:italic [&>blockquote]:text-gray-700 [&>blockquote]:my-[2em] [&>blockquote]:leading-relaxed [&>blockquote]:text-lg
         [&>ul]:my-[1.5em] [&>ul]:pl-6 [&>ul]:leading-relaxed
         [&>ol]:my-[1.5em] [&>ol]:pl-6 [&>ol]:leading-relaxed

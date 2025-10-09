@@ -46,10 +46,10 @@ npm run type-check # TypeScript checking
 - Images stored in public/images/
 
 ## Deployment
-- Platform: Netlify
+- Platform: Vercel
 - Build: `npm run build`
 - Auto-deploy: Push to `dev` branch triggers deployment
-- Configuration: netlify.toml
+- Framework: Next.js (auto-detected by Vercel)
 
 ## Recent Fixes
 - ✅ IBM Plex Mono font inheritance resolved

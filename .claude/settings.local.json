@@ -43,7 +43,11 @@
       "Bash(do sed -i '' 's|/images/stories/|filmrick/stories/|g' \"$file\")",
       "Bash(npx dotenv-cli:*)",
       "Bash(find:*)",
-      "WebFetch(domain:fontsource.org)"
+      "WebFetch(domain:fontsource.org)",
+      "Bash(xargs kill:*)",
+      "WebFetch(domain:typeof.net)",
+      "Bash(xargs:*)",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []

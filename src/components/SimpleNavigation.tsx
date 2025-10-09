@@ -18,12 +18,12 @@ export function SimpleNavigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-50">
       <div className="max-w-7xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24">
         <div className="flex items-center justify-between h-28">
-          <Link href="/" className="text-[1.75rem] font-bold tracking-wide text-gray-800 hover:text-gray-600 transition-colors duration-300" style={{ fontFamily: 'Georgia, serif' }}>
+          <Link href="/" className="text-xl font-bold tracking-wide text-gray-800 hover:text-gray-600 transition-colors duration-300">
             FILMRICK
           </Link>
 
           <div className="flex items-center gap-8">
-            <div className="hidden md:flex items-center gap-12" style={{ fontFamily: 'Georgia, serif' }}>
+            <div className="hidden md:flex items-center gap-12">
               <Link
                 href="/"
                 className={`relative text-gray-800 hover:text-gray-600 transition-all duration-300 font-medium text-sm tracking-wider uppercase ${

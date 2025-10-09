@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'sm': ['0.9375rem', { lineHeight: '1.5' }],    // 15px override
+      },
       fontFamily: {
         // Merriweather for headlines and display text
         serif: ['var(--font-merriweather)', 'Merriweather', 'serif'],
@@ -14,22 +17,6 @@ module.exports = {
         sans: ['var(--font-crimson)', 'Crimson Text', 'serif'],
         // Keep monospace for code elements if needed
         mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
-      },
-      fontSize: {
-        // Editorial Typography Scale
-        'xs': ['0.75rem', { lineHeight: '1.4' }],       // 12px
-        'sm': ['0.875rem', { lineHeight: '1.5' }],      // 14px
-        'base': ['1.125rem', { lineHeight: '1.6' }],    // 18px - Editorial body
-        'lg': ['1.25rem', { lineHeight: '1.5' }],       // 20px
-        'xl': ['1.375rem', { lineHeight: '1.4' }],      // 22px
-        '2xl': ['1.5rem', { lineHeight: '1.3' }],       // 24px
-        '3xl': ['1.875rem', { lineHeight: '1.2' }],     // 30px
-        '4xl': ['2.25rem', { lineHeight: '1.1' }],      // 36px
-        '5xl': ['3rem', { lineHeight: '1.0' }],         // 48px
-        '6xl': ['3.75rem', { lineHeight: '0.95' }],     // 60px
-        '7xl': ['4.5rem', { lineHeight: '0.9' }],       // 72px
-        '8xl': ['6rem', { lineHeight: '0.85' }],        // 96px
-        '9xl': ['8rem', { lineHeight: '0.8' }],         // 128px
       },
       fontWeight: {
         'light': '300',

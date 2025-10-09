@@ -67,11 +67,11 @@ export function Pagination({
           href={getPageUrl(currentPage - 1)}
           className="px-4 py-2 text-sm font-bold text-gray-600 hover:text-gray-900 transition-colors border border-gray-200 hover:border-gray-300 rounded-sm"
         >
-          ← Previous
+          ← Anterior
         </Link>
       ) : (
         <span className="px-4 py-2 text-sm text-gray-400 border border-gray-100 rounded-sm cursor-not-allowed">
-          ← Previous
+          ← Anterior
         </span>
       )}
 
@@ -111,11 +111,11 @@ export function Pagination({
           href={getPageUrl(currentPage + 1)}
           className="px-4 py-2 text-sm font-bold text-gray-600 hover:text-gray-900 transition-colors border border-gray-200 hover:border-gray-300 rounded-sm"
         >
-          Next →
+          Siguiente →
         </Link>
       ) : (
         <span className="px-4 py-2 text-sm text-gray-400 border border-gray-100 rounded-sm cursor-not-allowed">
-          Next →
+          Siguiente →
         </span>
       )}
     </nav>

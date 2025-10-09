@@ -20,12 +20,12 @@ export default function About() {
       <main className="min-h-screen bg-white">
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 py-24">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-8 tracking-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-8 tracking-tight">
               Acerca de FILMRICK
             </h1>
             <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
           </div>
-          <p className="text-gray-600 text-lg leading-relaxed text-center max-w-2xl mx-auto">
+          <p className="text-gray-600 text-sm leading-relaxed text-center max-w-2xl mx-auto">
             {t.about.description}
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="py-24 md:py-32 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 text-center">
-          <h1 className="text-5xl md:text-6xl font-extralight text-gray-800 mb-8 tracking-[-0.02em] font-sans">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-extralight text-gray-800 mb-8 tracking-[-0.02em] font-sans">
             Acerca de FILMRICK
           </h1>
           <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
@@ -50,7 +50,7 @@ export default function About() {
             </div>
           </div>
           
-          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-sm text-gray-600 leading-relaxed max-w-3xl mx-auto">
             {bio.metadata.description}
           </p>
         </div>
@@ -60,15 +60,15 @@ export default function About() {
       <section className="py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24">
           <article className="
-            text-lg md:text-xl
+            text-sm
             leading-relaxed text-gray-700
             space-y-6
             [&>p]:mb-6
             [&>p]:leading-relaxed
             [&>em]:italic
             [&>strong]:font-bold
-            [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:mt-12 [&>h2]:mb-6 [&>h2]:text-gray-800 [&>h2]:tracking-wide
-            [&>h3]:text-xl [&>h3]:font-bold [&>h3]:mt-8 [&>h3]:mb-4 [&>h3]:text-gray-800 [&>h3]:tracking-wide
+            [&>h2]:text-xl [&>h2]:md:text-2xl [&>h2]:font-bold [&>h2]:mt-12 [&>h2]:mb-6 [&>h2]:text-gray-800 [&>h2]:tracking-wide
+            [&>h3]:text-lg [&>h3]:md:text-xl [&>h3]:font-bold [&>h3]:mt-8 [&>h3]:mb-4 [&>h3]:text-gray-800 [&>h3]:tracking-wide
             [&>blockquote]:border-l-4 [&>blockquote]:border-gray-300 [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-gray-700 [&>blockquote]:my-8
             [&>ul]:space-y-2 [&>ul]:my-6 [&>ul]:pl-6
             [&>ol]:space-y-2 [&>ol]:my-6 [&>ol]:pl-6
@@ -82,10 +82,10 @@ export default function About() {
       {/* Call to Action */}
       <section className="py-16 md:py-24 border-t border-gray-100 bg-gray-50">
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 tracking-wide">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-8 tracking-wide">
             Conectemos
           </h2>
-          <p className="text-lg text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
             Me encantaría escuchar de otros fotógrafos, colaboradores potenciales o cualquier persona interesada en el arte de la fotografía analógica.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

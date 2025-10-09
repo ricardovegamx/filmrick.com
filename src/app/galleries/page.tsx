@@ -11,11 +11,11 @@ export default function Galleries() {
       {/* Hero Section */}
       <section className="py-24 md:py-32 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-800 mb-8 leading-tight tracking-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-gray-800 mb-8 leading-tight tracking-tight">
             {t.galleries.title}
           </h1>
           <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
-          <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-sm text-gray-700 leading-relaxed max-w-3xl mx-auto">
             {t.galleries.description}
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function Galleries() {
                     
                     {/* Gallery Info */}
                     <div className="space-y-3">
-                      <h2 className="text-xl md:text-2xl font-serif font-bold text-gray-800 group-hover:text-gray-600 transition-colors tracking-wide">
+                      <h2 className="text-lg md:text-xl font-serif font-bold text-gray-800 group-hover:text-gray-600 transition-colors tracking-wide">
                         {gallery.metadata.title}
                       </h2>
 

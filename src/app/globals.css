@@ -1,12 +1,17 @@
 @import "tailwindcss";
 
-/* Font family assignments - essential for design */
+@theme {
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+}
+
+/* Font family assignments - Iosevka Etoile primary with fallbacks */
 body {
-  font-family: var(--font-crimson), 'Crimson Text', serif;
+  font-family: 'Iosevka Etoile', var(--font-crimson), 'Crimson Text', serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-merriweather), 'Merriweather', serif;
+  font-family: 'Iosevka Etoile', var(--font-merriweather), 'Merriweather', serif;
 }
 
 /* Gallery reveal animation */

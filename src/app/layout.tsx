@@ -1,4 +1,9 @@
 import "./globals.css";
+import "@fontsource/iosevka-etoile/400.css";
+import "@fontsource/iosevka-etoile/500.css";
+import "@fontsource/iosevka-etoile/600.css";
+import "@fontsource/iosevka-etoile/700.css";
+import "@fontsource/iosevka-etoile/400-italic.css";
 import { Merriweather, Crimson_Text } from "next/font/google";
 import { generatePhotographyPortfolioStructuredData } from "@/lib/seo";
 import { SimpleNavigation } from "@/components/SimpleNavigation";

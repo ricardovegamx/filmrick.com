@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { getPaginatedPosts } from '@/lib/mdx'
 import { getTranslations } from '@/lib/i18n'
 import { Pagination } from '@/components/Pagination'
+import { CloudinaryImage } from '@/components/CloudinaryImage'
 
 export default function Stories() {
   const { posts: stories, totalPages, currentPage, hasNextPage, hasPreviousPage } = getPaginatedPosts('stories', 1, 6) // Default to Spanish, page 1, 6 posts
@@ -13,11 +13,11 @@ export default function Stories() {
       {/* Hero Section */}
       <section className="py-24 md:py-32 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-800 mb-8 leading-tight tracking-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-gray-800 mb-8 leading-tight tracking-tight">
             {t.stories.title}
           </h1>
           <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
-          <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-sm text-gray-600 leading-relaxed max-w-3xl mx-auto">
             {t.stories.description}
           </p>
         </div>
@@ -28,8 +28,8 @@ export default function Stories() {
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24">
           {stories.length === 0 ? (
             <div className="text-center py-24">
-              <p className="text-xl font-serif text-gray-600 mb-4">{t.stories.noStories}</p>
-              <p className="text-xl text-gray-500">{t.stories.checkBack}</p>
+              <p className="text-sm font-serif text-gray-600 mb-4">{t.stories.noStories}</p>
+              <p className="text-sm text-gray-500">{t.stories.checkBack}</p>
             </div>
           ) : (
             <div className="grid gap-16 md:gap-24">
@@ -40,10 +40,11 @@ export default function Stories() {
 
                       {/* Story Image */}
                       <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
-                        <Image
-                          src={`/images/stories/${story.metadata.slug}/hero.jpg`}
+                        <CloudinaryImage
+                          src={`filmrick/stories/${story.metadata.slug}/hero`}
                           alt={story.metadata.title}
                           fill
+                          quality="best"
                           className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                         />
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
@@ -59,12 +60,12 @@ export default function Stories() {
                               day: 'numeric'
                             })}
                           </div>
-                          <h2 className="text-xl md:text-2xl lg:text-3xl font-serif font-bold text-gray-900 leading-tight group-hover:text-gray-700 transition-colors tracking-tight">
+                          <h2 className="text-lg md:text-xl lg:text-2xl font-serif font-bold text-gray-900 leading-tight group-hover:text-gray-700 transition-colors tracking-tight">
                             {story.metadata.title}
                           </h2>
                         </div>
 
-                        <p className="text-xl text-gray-700 leading-relaxed">
+                        <p className="text-sm text-gray-600 leading-relaxed">
                           {story.metadata.description}
                         </p>
 

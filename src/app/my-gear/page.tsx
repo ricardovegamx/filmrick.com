@@ -7,11 +7,11 @@ export default function MyGear() {
       {/* Hero Section */}
       <section className="py-24 md:py-32 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-8 tracking-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-8 tracking-tight">
             {t.myGear.title}
           </h1>
           <div className="w-16 h-px bg-gray-300 mx-auto mb-12"></div>
-          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-sm text-gray-600 leading-relaxed max-w-3xl mx-auto">
             {t.myGear.description}
           </p>
         </div>
@@ -24,7 +24,7 @@ export default function MyGear() {
             
             {/* Cameras Section */}
             <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-gray-800 tracking-[0.2em]">{t.myGear.cameras}</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-gray-800 tracking-[0.2em]">{t.myGear.cameras}</h2>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Main Camera */}
@@ -101,7 +101,7 @@ export default function MyGear() {
 
             {/* Lenses Section */}
             <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-gray-800">Lentes</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-gray-800">Lentes</h2>
               
               <div className="space-y-6">
                 <div className="border-b border-gray-100 pb-6">
@@ -123,7 +123,7 @@ export default function MyGear() {
 
             {/* Favorite Film Rolls Section */}
             <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-gray-800">Rollos Favoritos</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-gray-800">Rollos Favoritos</h2>
 
               <div className="space-y-6">
                 <div className="border-b border-gray-100 pb-6">
@@ -170,7 +170,7 @@ export default function MyGear() {
 
             {/* Scanner Section */}
             <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-gray-800">Escáner</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-gray-800">Escáner</h2>
 
               <div className="space-y-4">
                 <div className="aspect-[4/3] bg-gray-100 border border-gray-200 flex items-center justify-center">
@@ -184,7 +184,7 @@ export default function MyGear() {
 
             {/* Accessories Section */}
             <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-gray-800">Accesorios Esenciales</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-gray-800">Accesorios Esenciales</h2>
 
               <div className="prose prose-gray max-w-none text-gray-600">
                 <ul className="space-y-3">
