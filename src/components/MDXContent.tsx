@@ -3,11 +3,11 @@ import { Post } from '@/lib/mdx'
 import { Gallery, GalleryImage, FeaturedGalleryImage } from '@/components/Gallery'
 import { Quote } from '@/components/Quote'
 import { CloudinaryImage } from '@/components/CloudinaryImage'
-import { Translations } from '@/lib/i18n'
+import { translations } from '@/lib/i18n'
 
 interface MDXContentProps {
   post: Post
-  t: Translations
+  t: typeof translations
 }
 
 const components = {
