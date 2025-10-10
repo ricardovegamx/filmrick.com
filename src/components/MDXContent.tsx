@@ -21,7 +21,7 @@ const components = {
       width={1200}
       height={800}
       quality="best"
-      className="w-full h-auto mt-8 mb-0"
+      className="w-full h-auto mt-8 mb-1"
     />
   ),
 }
