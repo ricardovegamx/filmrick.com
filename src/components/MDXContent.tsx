@@ -71,6 +71,8 @@ export function MDXContent({ post, t }: MDXContentProps) {
         leading-relaxed text-gray-700
         [&>p]:mb-[1.5em]
         [&>p]:leading-relaxed
+        [&>p:has(+p>em)]:mb-2
+        [&>p>em]:not-italic [&>p>em]:text-xs [&>p>em]:text-gray-500 [&>p>em]:block [&>p>em]:text-center [&>p>em]:mt-2 [&>p>em]:mb-[2em]
         [&>em]:italic
         [&>strong]:font-semibold
         [&>h2]:text-lg [&>h2]:md:text-xl [&>h2]:font-serif [&>h2]:font-bold [&>h2]:mt-[3em] [&>h2]:mb-[1.5em] [&>h2]:text-gray-800 [&>h2]:leading-tight [&>h2]:tracking-tight
