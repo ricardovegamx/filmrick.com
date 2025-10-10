@@ -50,46 +50,64 @@ export default async function StoriesPage({ params }: StoriesPageProps) {
         </div>
       </section>
 
-      {/* Stories List */}
+      {/* Stories Grid */}
       <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-12 md:px-16 lg:px-20 xl:px-24">
           {stories.length > 0 ? (
-            <div className="space-y-12">
-              {stories.map((story, index) => (
-                <article key={story.metadata.slug} className={`
-                  group pb-12
-                  ${index < stories.length - 1 ? 'border-b border-gray-100' : ''}
-                `}>
-                  <Link href={`/stories/${story.metadata.slug}`} className="block">
-                    <div className="space-y-4">
-                      <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-800 group-hover:text-gray-600 transition-colors leading-tight tracking-tight">
-                        {story.metadata.title}
-                      </h2>
+            <div className="grid gap-16 md:gap-24">
+              {stories.map((story) => (
+                <article key={story.metadata.slug} className="group">
+                  <Link href={`/stories/${story.metadata.slug}`}>
+                    <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
-                      {story.metadata.description && (
-                        <p className="text-sm text-gray-600 leading-relaxed max-w-3xl">
+                      {/* Story Image */}
+                      <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
+                        <CloudinaryImage
+                          src={`filmrick/stories/${story.metadata.slug}/image-2`}
+                          alt={story.metadata.title}
+                          fill
+                          quality="best"
+                          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        />
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
+                      </div>
+
+                      {/* Story Content */}
+                      <div className="space-y-6">
+                        <div className="space-y-4">
+                          <div className="text-xs uppercase tracking-[0.2em] text-gray-500 font-bold">
+                            {story.metadata.date && new Date(story.metadata.date).toLocaleDateString('es-ES', {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric'
+                            })}
+                          </div>
+                          <h2 className="text-lg md:text-xl lg:text-2xl font-serif font-bold text-gray-900 leading-tight group-hover:text-gray-700 transition-colors tracking-tight">
+                            {story.metadata.title}
+                          </h2>
+                        </div>
+
+                        <p className="text-sm text-gray-600 leading-relaxed">
                           {story.metadata.description}
                         </p>
-                      )}
 
-                      {story.metadata.date && (
-                        <time className="block text-sm text-gray-500 font-bold uppercase tracking-[0.2em]">
-                          {new Date(story.metadata.date).toLocaleDateString('es-ES', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}
-                        </time>
-                      )}
+                        <div className="pt-4">
+                          <span className="inline-flex items-center text-xs font-bold text-gray-900 group-hover:text-gray-700 transition-colors tracking-wider uppercase">
+                            Leer Historia
+                            <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                          </span>
+                        </div>
+                      </div>
+
                     </div>
                   </Link>
                 </article>
               ))}
             </div>
           ) : (
-            <div className="text-center py-16">
-              <p className="text-xl text-gray-600 mb-8">Aún no hay historias disponibles.</p>
-              <p className="text-gray-500">Pronto habrá más relatos del mundo analógico.</p>
+            <div className="text-center py-24">
+              <p className="text-sm font-serif text-gray-600 mb-4">Aún no hay historias disponibles.</p>
+              <p className="text-sm text-gray-500">Regresa pronto para relatos del mundo analógico.</p>
             </div>
           )}
 
