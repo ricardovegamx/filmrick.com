@@ -47,7 +47,8 @@
       "Bash(xargs kill:*)",
       "WebFetch(domain:typeof.net)",
       "Bash(xargs:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(head:*)"
     ],
     "deny": [],
     "ask": []

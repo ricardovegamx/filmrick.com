@@ -41,7 +41,7 @@ export default function Stories() {
                       {/* Story Image */}
                       <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
                         <CloudinaryImage
-                          src={`filmrick/stories/${story.metadata.slug}/hero`}
+                          src={`filmrick/stories/${story.metadata.slug}/image-2`}
                           alt={story.metadata.title}
                           fill
                           quality="best"

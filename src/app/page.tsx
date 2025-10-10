@@ -245,7 +245,7 @@ export default function Home() {
                 {/* Story Image */}
                 <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
                   <CloudinaryImage
-                    src={`filmrick/stories/${latestStory.metadata.slug}/hero`}
+                    src={`filmrick/stories/${latestStory.metadata.slug}/image-2`}
                     alt={latestStory.metadata.title}
                     fill
                     quality="best"
