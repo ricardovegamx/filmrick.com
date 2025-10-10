@@ -15,13 +15,36 @@ const components = {
   GalleryImage,
   FeaturedGalleryImage,
   Quote,
+  p: (props: any) => {
+    // Check if this paragraph contains only an image
+    const hasOnlyImage = props.children?.type === 'img' ||
+                         (typeof props.children === 'object' && props.children?.props?.src)
+
+    if (hasOnlyImage) {
+      return <div className="my-8">{props.children}</div>
+    }
+
+    // Check if this is an em (caption) that comes after an image
+    const isCaption = typeof props.children === 'object' &&
+                     props.children?.type === 'em'
+
+    if (isCaption) {
+      return (
+        <p className="text-xs text-gray-500 text-center mt-1 mb-[2em]">
+          [{props.children.props.children}]
+        </p>
+      )
+    }
+
+    return <p className="mb-[1.5em] leading-relaxed">{props.children}</p>
+  },
   img: (props: any) => (
     <CloudinaryImage
       {...props}
       width={1200}
       height={800}
       quality="best"
-      className="w-full h-auto mt-8 mb-1"
+      className="w-full h-auto"
     />
   ),
 }
@@ -69,10 +92,6 @@ export function MDXContent({ post, t }: MDXContentProps) {
         max-w-[42rem]
         text-sm
         leading-relaxed text-gray-700
-        [&>p]:mb-[1.5em]
-        [&>p]:leading-relaxed
-        [&>p:has(+p>em)]:mb-0
-        [&>p>em]:not-italic [&>p>em]:text-xs [&>p>em]:text-gray-500 [&>p>em]:block [&>p>em]:text-center [&>p>em]:mt-1 [&>p>em]:mb-[2em] [&>p>em]:before:content-['['] [&>p>em]:after:content-[']']
         [&>em]:italic
         [&>strong]:font-semibold
         [&>h2]:text-lg [&>h2]:md:text-xl [&>h2]:font-serif [&>h2]:font-bold [&>h2]:mt-[3em] [&>h2]:mb-[1.5em] [&>h2]:text-gray-800 [&>h2]:leading-tight [&>h2]:tracking-tight
